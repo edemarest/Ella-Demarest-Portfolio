@@ -23,14 +23,17 @@ const Models = () => {
 
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: false,
     arrows: true,
     centerMode: false,
     variableWidth: false,
+    draggable: false,   // ✅ Disables mouse dragging
+    swipe: true,       // ✅ Disables swipe gestures
+    touchMove: true,   // ✅ Prevents touch movement
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2, centerPadding: "20px" } },
       { breakpoint: 768, settings: { slidesToShow: 1, centerPadding: "0px" } },
@@ -64,8 +67,7 @@ const Models = () => {
 
       {/* Body Text Below Buttons */}
       <p className="models-body-text">
-        Explore a diverse collection of 3D models ranging from sci-fi structures to abstract creations.  
-        Each model is meticulously crafted to provide a stunning visual experience.
+        I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, enviornment assets, vehicles, and more. I can create hand-painted textures (using Procreate's 3D painting and an apple pencil), or PBR textures using Substance Painter.
       </p>
 
       {/* Carousel */}

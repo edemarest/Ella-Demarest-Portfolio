@@ -48,7 +48,7 @@
 
     /* === 📦 PROJECT CARD (Default Square) === */
     .project-card {
-        @apply relative bg-panelGradient rounded-lg p-5 border-2 border-neonCyan 
+        @apply relative bg-panelGradient rounded-lg p-5 border-[1px] border-neonCyan 
             shadow-neon overflow-hidden transition-all duration-200 ease-in-out flex flex-col justify-between items-center text-left;
         width: 20%;
         transform: scale(1); /* Default size */
@@ -209,7 +209,7 @@
 
     /* === 💫 ANIMATED TRANSITIONS === */
     .project-card {
-        @apply relative bg-panelGradient rounded-lg p-5 border-2 border-neonCyan shadow-neon overflow-hidden transition-all duration-500 text-left;
+        @apply relative bg-panelGradient rounded-lg p-5 border-[1px] border-green-500 shadow-neon overflow-hidden transition-all duration-500 text-left;
         width: 95%;
         min-width: 300px;
         height: auto;

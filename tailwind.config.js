@@ -1,5 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+    safelist: [
+      "glowing-button",
+      "group:hover",
+      "group:hover .glowing-button",
+      "min-w-max",
+      "whitespace-nowrap"
+    ],
+  },
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {

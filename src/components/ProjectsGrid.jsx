@@ -58,7 +58,7 @@ const ProjectsGrid = () => {
       </div>
 
       {/* Mini Labels Below Title */}
-      <div className="mini-buttons-container flex flex-row gap-4">
+      <div className="mini-buttons-container flex flex-row gap-4 py-3">
         {projectLabels.map((label) => (
           <span key={label.id} className={`mini-glowing-label ${label.bg}`}>
             <span className="mini-label-icon">{label.icon}</span>
