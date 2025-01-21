@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaCode, FaObjectGroup, FaCoffee } from "react-icons/fa";
-import { FaPython, FaJava, FaJs, FaSwift, FaHtml5, FaCss3Alt, FaCuttlefish } from "react-icons/fa";
+import { FaPython, FaJs, FaSwift, FaHtml5, FaCss3Alt, FaCuttlefish } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
 import "../styles/projects/project-card.css";
 import { SiTypescript } from "react-icons/si";

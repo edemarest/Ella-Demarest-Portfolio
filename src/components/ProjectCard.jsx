@@ -101,8 +101,8 @@ const ProjectCard = ({ project, isExpanded, onExpand, onCollapse }) => {
                       {item.type === "image" && (
                         <img 
                           src={item.fileSrc} 
-                          alt="Project Image"a
-                          className="project-file-imge"
+                          alt={project.title}  // ✅ Descriptive alt text
+                          className="project-file-image"
                         />
                       )}
                     </div>

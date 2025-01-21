@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSnowflake, faRedo, faGem } from "@fortawesome/free-solid-svg-icons";
 import "../../styles/projects/project-card.css";
@@ -22,7 +22,7 @@ const TicTacToe = () => {
         handleMove(botIndex, botSymbol);
       }
     }, 1500);
-  }, [isBotTurn, winner, board, playerSymbol, turn]); // ✅ Fixes missing dependencies
+  }, [isBotTurn, winner, board, playerSymbol, turn, handleMove]);
 
   useEffect(() => {
     const result = checkWinner(board);
@@ -66,13 +66,13 @@ const TicTacToe = () => {
     }
   };
 
-  const clearBoard = () => {
+  const clearBoard = useCallback(() => {
     console.log("[RESET] Board Cleared.");
     setBoard(Array(9).fill(null));
     setWinner(null);
     setIsBotTurn(playerSymbol === "O");
     setTurn(0);
-  };
+  }, [playerSymbol]);
 
   const togglePlayerSymbol = () => {
     const newSymbol = playerSymbol === "X" ? "O" : "X";
