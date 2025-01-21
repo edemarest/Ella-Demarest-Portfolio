@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaGlobe, FaShapes, FaStar, FaCamera, FaObjectGroup, FaCoffee } from "react-icons/fa";
+import { FaPython, FaJava, FaJs, FaSwift, FaHtml5, FaCss3Alt, FaCuttlefish } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
 import "../styles/projects/project-card.css";
+import { SiTypescript } from "react-icons/si";
 
 const ProjectsGrid = () => {
   const [expandedProject, setExpandedProject] = useState(null);
@@ -10,12 +12,7 @@ const ProjectsGrid = () => {
   // Fetch project data from public/data/projects.json
   useEffect(() => {
     fetch("assets/data/projects.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
         setProjectList(data);
         console.log("Fetched Projects:", data);
@@ -25,20 +22,11 @@ const ProjectsGrid = () => {
 
   // Handle expanding a project and moving it to the top
   const handleExpand = (id) => {
-    console.log("Expanding Project ID:", id);
-
     setProjectList((prevProjects) => {
       const selectedProject = prevProjects.find((p) => p.id === id);
       const otherProjects = prevProjects.filter((p) => p.id !== id);
 
-      if (selectedProject) {
-        const newProjectList = [selectedProject, ...otherProjects];
-        console.log("New Project List Order:", newProjectList.map((p) => p.id));
-        return newProjectList;
-      }
-
-      console.warn("Project not found in list!");
-      return prevProjects;
+      return selectedProject ? [selectedProject, ...otherProjects] : prevProjects;
     });
 
     setExpandedProject(id);
@@ -46,9 +34,20 @@ const ProjectsGrid = () => {
 
   // Handle collapsing a project
   const handleCollapse = () => {
-    console.log("Collapsing Project ID:", expandedProject);
     setExpandedProject(null);
   };
+
+  // ✅ Mini Labels for Project Categories
+    const projectLabels = [
+      { id: 1, label: "Python", icon: <FaPython /> },
+      { id: 2, label: "Java", icon: <FaCoffee /> },
+      { id: 3, label: "JavaScript", icon: <FaJs /> },
+      { id: 4, label: "Swift", icon: <FaSwift /> },
+      { id: 5, label: "HTML/CSS", icon: <FaHtml5 />, secondIcon: <FaCss3Alt /> }, // Both HTML and CSS
+      { id: 6, label: "Lua", icon: <FaObjectGroup /> },
+      { id: 7, label: "TypeScript", icon: <SiTypescript /> },
+      { id: 8, label: "C/C++", icon: <FaCuttlefish /> },
+  ];
 
   return (
     <div className="projects-container">
@@ -56,6 +55,16 @@ const ProjectsGrid = () => {
       <div className="projects-header">
         <FaCode className="projects-icon" />
         <h2 className="projects-title">My Projects</h2>
+      </div>
+
+      {/* Mini Labels Below Title */}
+      <div className="mini-buttons-container flex flex-row gap-4">
+        {projectLabels.map((label) => (
+          <span key={label.id} className={`mini-glowing-label ${label.bg}`}>
+            <span className="mini-label-icon">{label.icon}</span>
+            {label.label}
+          </span>
+        ))}
       </div>
 
       {/* Dynamic Grid Layout */}
