@@ -7,7 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY, // Ensure "REACT_APP_" prefix in front-end apps
+  });
 
 const findBlockingMove = (board, playerSymbol) => {
     const winPatterns = [
