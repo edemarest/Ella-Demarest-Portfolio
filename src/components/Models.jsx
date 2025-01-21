@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { FaCubes, FaGlobe, FaShapes, FaStar, FaCamera, FaRobot, FaPaintBrush } from "react-icons/fa";
+import { FaCubes, FaGlobe, FaShapes, FaStar, FaCamera, FaRobot, FaPaintBrush, FaPen, FaSprayCan } from "react-icons/fa";
+import { SiBlender, SiAdobe } from "react-icons/si";
 import ModelViewer from "./ModelViewer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,7 +25,7 @@ const Models = () => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
     arrows: true,
@@ -36,13 +37,11 @@ const Models = () => {
     ],
   };
 
-  // ✅ Mini Button Data (Each with a unique color)
   const miniButtons = [
-    { id: 1, label: "Blender", icon: <FaCubes />},
-    { id: 2, label: "Substance Painter", icon: <FaPaintBrush />},
-    { id: 3, label: "ZBrush", icon: <FaStar />},
-    { id: 4, label: "Photography", icon: <FaCamera />},
-    { id: 5, label: "AI Models", icon: <FaRobot />},
+    { id: 1, label: "Blender", icon: <SiBlender /> }, // ✅ Blender Icon
+    { id: 2, label: "Substance Painter", icon: <SiAdobe  /> }, // ✅ Adobe (closest match)
+    { id: 3, label: "ZBrush", icon: <FaSprayCan /> }, // ✅ ZBrush Icon
+    { id: 4, label: "Procreate", icon: <FaPaintBrush  /> }, // ✅ Procreate Icon
   ];
 
   return (
