@@ -1,0 +1,69 @@
+[
+    {
+      "id": 1,
+      "title": "Power Rock App",
+      "subheading": "Fitness for Music Stars & Fans",
+      "image": "https://millpaca.com/wp-content/uploads/2016/03/placeholder-image-green.png",
+      "bullets": ["Music & Fitness", "Band-Endorsed Workouts", "Reward System"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>The Power Rock app is designed to bring together music stars and their fans through fitness.</p><ol><li>Fans can take charge of their fitness journey by browsing workouts curated by the bands they love and completing them to earn rewards.</li><li>Bands and artists can connect with their fans by creating band-endorsed workouts customized to reflect their unique style.</li></ol><p><strong>App Functionality for Fans</strong></p><ul><li>Select up to 3 favorite genres and receive customized workout suggestions based on their tastes.</li><li>Browse a library of workouts and filter by interests.</li><li>Add or remove workouts from their personal library.</li><li>Complete structured workouts in-app with a guided interface.</li><li>Earn Power Points for completing workouts of varying difficulty levels.</li></ul><p><strong>App Functionality for Stars</strong></p><ul><li>Create a profile for their band (or themselves as solo artists) with a logo, up to 3 genres, and up to 3 band member names (each capped at 10 characters).</li><li>Design custom workouts sponsored by their band, including sets, exercises, rep counts, and difficulty levels.</li><li>Delete workouts when no longer needed.</li></ul></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Managing two distinct user types (Fans and Stars) required implementing robust authentication and data parsing to ensure seamless yet distinct app experiences for each user.</li><li>Developing the \"Do Workout\" screen logic was a significant challenge, particularly handling completed sets without breaking the layout.</li><li>Abstracting and organizing code into reusable helper functions and structs was critical for maintaining scalability as the app's complexity grew.</li></ul></div>",
+      "link": "https://github.com/edemarest/Power-Rock-App",
+      "media": [
+        { "type": "youtube", "id": "U-qfejJFTfM" },
+        { "type": "slides", "id": "194_5LoCfFsi7GLSna5Aaqp1MH_6LsLken8RVnQssJOw" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Robux Calculator",
+      "subheading": "Robux to Currency Conversion & Store Earnings",
+      "image": "/assets/images/robux_calculator.png",
+      "bullets": ["DevEx Calculator", "Marketplace Fee Adjustments", "Currency Conversion"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>Developers, contractors, and Robux purchasers can use this tool to calculate costs and earnings.</p><ul><li>Calculates DevEx earnings from Robux to currency (local tax rate can be applied).</li><li>Converts currency value to Robux and vice versa and applies the package discounts Roblox offers for larger bundles.</li><li>Calculates Robux earnings with marketplace fee applied.</li><li>Determines price needed to earn a specified Robux amount given the marketplace.</li></ul></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>To ensure users could select their local currency, everything is calculated in USD and then multiplied by the conversion rate at the end of the calculation.</li><li>Because Roblox offers more Robux for higher-priced bundles, calculating the amount of Robux one could buy with a certain amount of money was not a linear equation.</li><li>A play tester recommended that I add a way to subtract taxes from DevEx earnings.</li></ul></div>",
+      "link": "https://www.roblox.com/games/13685362163/Robux-Computer",
+      "media": [
+        { "type": "youtube", "id": "BUmp30WhXAQ" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Bloxle",
+      "subheading": "Unlimited Wordle",
+      "image": "/assets/images/bloxle.png",
+      "bullets": ["Custom UI", "Word Validation API", "Point System"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A recreation of the popular game 'Wordle.' The best part is that my version is unlimited—not just one-word-per-day! I also designed my user interface to give it a wooden vibe.</p></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>My first time creating and programming UI elements in Lua/Roblox Studio, which required trial and error.</li><li>Designing the game’s input system to behave like Wordle’s strict row-based guessing mechanism.</li><li>Implementing an API-based dictionary lookup to validate word guesses.</li></ul></div>",
+      "link": "https://www.youtube.com/watch?v=_1k-i0bezEs",
+      "media": [
+        { "type": "youtube", "id": "_1k-i0bezEs?si=IE99k5FS36lRjFY3" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Flood Minigame",
+      "subheading": "Fill the board with the same color in limited turns",
+      "image": "/assets/images/flood.png",
+      "bullets": ["Flood Algorithm", "Difficulty Scaling", "Leaderboard System"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A recreation of the game 'Flood' in Lua. The goal of the game is to fill the board with the same color in the given number of turns.</p></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Developing an efficient flood-fill algorithm that didn't cause infinite loops.</li><li>Balancing game difficulty with customizable board size and colors.</li><li>Implementing a real-time leaderboard system using datastores to track high scores.</li></ul></div>",
+      "link": "https://www.roblox.com/games/12921382755/FLOOD-Beta",
+      "media": [
+        { "type": "youtube", "id": "your_youtube_id_here" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Maze Game",
+      "subheading": "Algorithmic Maze Creation and Solving",
+      "image": "/assets/images/maze.png",
+      "bullets": ["Maze Generation", "Pathfinding Algorithms", "Gamified"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>This program allows users to create and navigate a randomly generated maze.</p><ul><li>User can input dimensions to generate a maze of that size.</li><li>Arrow keys can be used to navigate the maze; the attempted path is highlighted.</li><li>There is an option to highlight the quickest solution.</li><li>User can toggle between a visual of how the 'breadth-first search' algorithm versus the 'depth-first search' algorithm would solve the maze.</li></ul></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>The first difficult part was recreating Prim’s algorithm to generate a viable maze.</li><li>Incorporating visuals for the quickest solution and the two different search algorithms was a challenge.</li></ul></div>",
+      "link": "",
+      "media": [
+        { "type": "image", "fileSrc": "/assets/maze.png" }
+      ]
+    }
+  ]
+  

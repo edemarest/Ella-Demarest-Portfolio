@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.models-container {
+    @apply mt-12 text-center;
+}
+
+/* === Header === */
+.models-header {
+    @apply flex text-left mb-6 mx-10;
+}
+
+.models-icon {
+    @apply text-neonCyan text-4xl mr-3;
+}
+
+.models-title {
+    @apply text-3xl font-bold text-neonCyan tracking-wide;
+}
+
+/* === Carousel Wrapper (Increased Height & Centered) === */
+.models-carousel {
+    @apply mx-auto w-full max-w-5xl;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ✅ Centers the models vertically */
+    height: 400px; /* ✅ Increased height */
+    width: 100%;
+    background-color:rgba(52, 52, 52, 0.4);
+    border-radius: 10px;
+}
+
+/* === Slick List (Ensures Proper Vertical Alignment) === */
+.slick-list {
+    display: flex;
+    align-items: center; /* ✅ Centers items vertically */
+    justify-content: center;
+    height: 100%;
+    padding: 20px 0; /* ✅ Adds padding for better spacing */
+}
+
+/* === Slick Track (Ensures Models Fit Properly) === */
+.slick-track {
+    display: flex;
+    align-items: center; /* ✅ Centers items in the track */
+    justify-content: center;
+    gap: 30px; /* ✅ Adds spacing between slides */
+}
+
+.model-frame {
+    @apply border-2 border-neonCyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; /* ✅ Fixed size */
+    height: 350px; /* ✅ Increased height */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 2px rgba(0, 255, 255, 0.4);
+    background-size: cover; /* ✅ Ensures the grid image covers the whole frame */
+    background-position: center; /* ✅ Keeps the grid centered */
+    background-repeat: no-repeat; /* ✅ Prevents tiling */
+    background-blend-mode: multiply; /* ✅ Increases grid contrast */
+    opacity: 1; /* ✅ Keeps full visibility of both layers */
+}
+
+/* === Slick Arrows (Centered Vertically) === */
+.slick-prev, .slick-next {
+    color: #0099ff !important;
+    z-index: 10;
+    top: 50%; /* ✅ Centers arrows vertically */
+    transform: translateY(-50%);
+}
+
+.slick-prev:hover, .slick-next:hover {
+    color: #0099ff !important;
+}
+
+.model-frame:hover {
+    transform: scale(1.01);
+}
+
+  .models-body-text {
+    @apply text-base py-5 text-left pl-10;
+    font-family: "Rajdhani", sans-serif;
+  }

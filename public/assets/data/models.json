@@ -1,0 +1,19 @@
+[
+    {
+      "url": "/assets/models/car.glb",
+      "camera": { "position": [45, 30, 75], "fov": 10 }
+    },
+    {
+        "url": "/assets/models/car.glb",
+        "camera": { "position": [90, 40, 105], "fov": 10 }
+      },
+      {
+        "url": "/assets/models/car.glb",
+        "camera": { "position": [0, 20, 75], "fov": 10 }
+      },
+      {
+        "url": "/assets/models/car.glb",
+        "camera": { "position": [0, 20, 75], "fov": 10 }
+      }
+  ]
+  

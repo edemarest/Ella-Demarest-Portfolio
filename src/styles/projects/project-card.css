@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        padding-bottom: 10px;
+    }
+    /* === 🌟 PROJECTS CONTAINER === */
+    .projects-container {
+        @apply w-[95%] p-6 mx-auto;
+    }
+
+    /* === 🔹 PROJECT HEADER (Title + Icon) === */
+    .projects-header {
+        @apply flex items-center gap-3 mb-4;
+    }
+
+    .projects-icon {
+        @apply text-neonCyan text-3xl;
+    }
+
+    .projects-title {
+        @apply text-3xl font-bold text-neonCyan;
+    }
+
+    /* === 🖼 PROJECTS GRID (DYNAMIC) === */
+    .projects-grid {
+        @apply grid gap-4 p-0 sm:p-3 md:p-5  transition-all bg-black;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        align-items: start;
+    }
+
+    
+    /* Ensure only the expanded project stretches, others stay unchanged */
+    .project-card.expanded {
+        grid-column: 1 / -1; /* Take up full width row without affecting siblings */
+        width: 100%;
+    }
+    
+    .project-card:not(.expanded) {
+        max-width: 450px; /* Ensures non-expanded projects remain the same */
+        height: 500px; /* Ensures non-expanded projects remain the same */
+    }    
+
+    /* === 📦 PROJECT CARD (Default Square) === */
+    .project-card {
+        @apply relative bg-panelGradient rounded-lg p-5 border-2 border-neonCyan 
+            shadow-neon overflow-hidden transition-all duration-200 ease-in-out flex flex-col justify-between items-center text-left;
+        width: 20%;
+        transform: scale(1); /* Default size */
+    }
+    
+    /* === 🖱️ Scale Up Slightly on Hover === */
+    .project-card:hover {
+        transform: scale(1.01); /* Expand slightly */
+    }    
+
+    /* === 🔄 EXPAND/COLLAPSE ANIMATION === */
+    .project-card {
+        transition: transform 0.4s ease, opacity 0.4s ease, max-height 0.4s ease;
+    }
+
+    /* === 🔥 Expanded Project Takes Full Width & Moves to Front === */
+    .project-card.expanded {
+        @apply col-span-full;
+        width: 100% !important;
+        max-width: none !important; /* Ensures it stretches */
+        transform: scale(1.02); /* Subtle scaling effect */
+        opacity: 1;
+    }
+    .expanded-layout {
+        @apply px-4 py-2;
+    }
+    /* === 🏆 HEADER SECTION (Title & Subheading Above Everything) === */
+    .expanded-header {
+        @apply text-left mb-4 w-full;
+    }
+
+    /* === 📑 CONTENT AREA (Media + Details Side by Side) === */
+    .expanded-content {
+        @apply flex flex-col md:flex-row gap-6 w-full;
+    }
+
+    /* === 🎥 MEDIA SECTION (Fixed Aspect Ratio, Stacked Layout) === */
+    .expanded-media-container {
+        @apply flex flex-col gap-4 w-full md:w-1/2;
+    }
+
+    /* === 🎞 INDIVIDUAL MEDIA EMBEDS === */
+    .expanded-media {
+        @apply w-full aspect-video rounded-lg overflow-hidden bg-darkGrey flex items-center justify-center;
+    }
+
+    /* === Ensure Embedded Frames Fit Properly === */
+    .expanded-media iframe {
+        @apply w-full h-full border-none;
+    }
+
+    /* === 📜 DESCRIPTION + BUTTONS (Right Side) === */
+    .expanded-details {
+        @apply flex flex-col w-full md:w-1/2 text-base;
+        font-family: "Rajdhani", sans-serif;
+    }
+
+    .expanded-details ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    .expanded-details strong {
+        @apply text-neonCyan text-xl;
+    }
+
+    /* === 📝 TITLE & SUBHEADING (Unified for Normal & Expanded) === */
+    .project-title, .expanded-title {
+        font-family: "Orbitron", sans-serif;
+    }
+
+    /* ✨ Dynamically Scale Text */
+    .project-title {
+        font-size: clamp(1.2rem, 1.8vw, 1.4rem); /* Scales between 1.7rem and 2.5rem based on viewport width */
+        @apply font-bold text-neonCyan;
+    }
+
+    .project-subheading {
+        font-size: clamp(1.3rem, 1vw, .7rem); /* Scales between 1.1rem and 1.6rem based on viewport width */
+        @apply text-cyberTextGrey font-bold;
+    }
+
+    .project-list {
+        font-size: clamp(1.2rem, 1.5vw, 1rem); /* Scales between 1.2rem and 2rem based on viewport width */
+    }
+
+    .project-subheading, .expanded-subheading {
+        @apply text-cyberTextGrey font-bold;
+        font-family: "Rajdhani", sans-serif;
+    }
+
+    /* 🖼️ Ensure Title, Subheading, and List are Centered */
+    .project-title,
+    .project-subheading,
+    .project-list {
+        @apply text-left w-full;
+    }
+
+    /* === 🔹 BULLET LIST (Styled Cyan) === */
+    .project-list {
+        @apply list-disc list-inside text-cyberTextGrey mt-2;
+        font-family: "Rajdhani", sans-serif;
+    }
+
+    /* === 🚀 EXPAND BUTTON === */
+    .expand-btn {
+        @apply bg-neonCyan text-darkGrey font-bold px-4 py-2 mt-auto rounded-full 
+            border-2 border-neonCyan w-1/3 self-center transition-all duration-300;
+    }
+
+    .expand-btn:hover {
+        @apply shadow-glow;
+    }
+
+    /* === 🎛 BUTTON CONTAINER === */
+    .button-container {
+        @apply flex gap-4 mt-0 top-0 right-0;
+    }
+
+    .expanded-card-topbar {
+        @apply flex flex-col md:flex-row justify-between items-start md:items-center w-full pb-5;
+    }    
+
+    .project-action-btn {
+        @apply bg-neonCyan text-darkGrey font-bold px-6 py-2 rounded-full border-2 border-neonCyan transition-all duration-300 text-center;
+    }
+
+    .project-action-btn:hover {
+        @apply shadow-glow;
+    }
+
+    /* === CLOSE BUTTON === */
+    .close-btn {
+        @apply bg-transparent text-neonCyan;
+    }
+
+    /* === 🌟 CUSTOM LIST STYLING (CYAN BULLETS) === */
+    .project-description ul {
+        @apply list-none pl-6 text-cyberTextGrey;
+    }
+
+    .project-description ul li {
+        @apply relative pl-2 text-cyberTextGrey;
+    }
+
+    .project-description ul li::before {
+        content: "•";
+        color: #00f5ff;
+        font-size: 2em;
+        position: absolute;
+        left: -0.5em;
+    }
+
+    /* === 📌 MEDIA PLACEHOLDER (If Needed) === */
+    .media-placeholder {
+        @apply absolute inset-0 flex items-center justify-center text-neonCyan;
+    }
+
+    /* === 💫 ANIMATED TRANSITIONS === */
+    .project-card {
+        @apply relative bg-panelGradient rounded-lg p-5 border-2 border-neonCyan shadow-neon overflow-hidden transition-all duration-500 text-left;
+        width: 95%;
+        min-width: 300px;
+        height: auto;
+    }
+
+    /* Ensure content fills available space so the button stays at the bottom */
+    .project-content {
+        @apply flex flex-col justify-between h-full w-full;
+    }
+}

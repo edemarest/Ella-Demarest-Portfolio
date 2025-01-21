@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Futuristic Header Title === */
+.banner-title {
+  @apply text-5xl font-bold text-white drop-shadow-lg;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+}
+
+/* === Subtle Futuristic Subtext === */
+.banner-subtext {
+  @apply text-lg text-gray-300 italic;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* === Games Page Container === */
+  .games-container {
+    @apply w-[95%] p-6 mx-auto;
+  }
+
+  /* === Header for Games Section === */
+  .games-header {
+    @apply flex items-center gap-3 mb-4;
+  }
+
+  .games-icon {
+    @apply text-neonCyan text-3xl;
+  }
+
+  .games-title {
+    @apply text-3xl font-bold text-neonCyan;
+  }
+
+  /* === Games Grid Layout === */
+  .games-grid {
+    @apply grid gap-4 p-0 sm:p-3 md:p-5 transition-all bg-black;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: start;
+  }
+
+  /* === Individual Game Card === */
+  .game-card {
+    @apply relative bg-panelGradient rounded-lg p-5 border-2 border-neonCyan 
+      shadow-neon overflow-hidden transition-all duration-500 flex flex-col items-center text-left;
+  }
+
+  /* === Game Image === */
+  .game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding-bottom: 10px;
+  }
+
+  /* === Game Title === */
+  .game-title {
+    @apply text-xl font-bold text-neonCyan text-center;
+  }
+
+  /* === Game Description === */
+  .game-description {
+    @apply text-cyberTextGrey text-sm text-center mt-2;
+  }
+
+  /* === Loading Text === */
+  .loading-text {
+    @apply text-cyberTextGrey text-lg text-center;
+  }
+
+  /* === Coming Soon Placeholder === */
+.coming-soon-container {
+  @apply flex flex-col items-center justify-center text-center p-8 rounded-lg shadow-panelInset border-2 border-neonCyan;
+  height: 320px;
+}
+
+  /* === Coming Soon Icon === */
+  .coming-soon-icon {
+    font-size: 4.5rem; /* Bigger icon */
+    color: #00f5ff;
+    text-shadow: 0 0 15px rgba(0, 245, 255, 0.8);
+    margin-bottom: 1rem;
+  }
+
+  /* === Coming Soon Text === */
+  .coming-soon-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00f5ff;
+    text-shadow: 0 0 12px rgba(0, 245, 255, 0.8);
+  }
+}
+

@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;700&family=Exo:wght@300;500;700&family=Quantico:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+header {
+  display: none !important;
+}
+
+/* === Apply Dark Theme === */
+body {
+  @apply bg-pitchBlack text-white;
+}
+
+/* === Glowing Green Line === */
+.glowing-green {
+  @apply bg-neonCyan shadow-[0px_0px_15px_3px_#00ffbf];
+}
+
+/* === Pulsing Effect for Elements === */
+.pulsing-glow {
+  @apply animate-pulseGlow;
+}
+
+/* === Neon Borders & Panels === */
+.neon-border {
+  @apply border-2 border-neonCyan shadow-neon bg-panelGradient;
+}
+
+/* === Cyberpunk Gradient Background === */
+.bg-cyber-gradient {
+  @apply bg-cyberGradient;
+}
+
+/* === Cyber Panel (Layered UI with Inset Shadow) === */
+.cyber-panel {
+  @apply bg-panelGradient rounded-lg shadow-panelInset;
+}
+
+/* === Cyber Button (Glowing Edge with Hover Animation) === */
+.cyber-button {
+  @apply bg-panelGradient text-neonCyan border-2 border-neonCyan px-5 py-2 uppercase font-bold tracking-widest transition-all;
+}
+
+.cyber-button:hover {
+  @apply shadow-glow scale-105;
+}
+
+/* === Image Glow Effect === */
+.shadow-neon {
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+  }  
+
+/* Default Gradient (Initial State) */
+.default-gradient {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 20%, transparent 80%);
+}
+
+/* Expanded Gradient (On Hover) */
+.expanded-gradient {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 20%, transparent 80%);
+}
+
+@layer components {
+  /* === Cyberpunk Gradient Background === */
+  .bg-cyber-gradient {
+    @apply bg-cyberGradient;
+  }
+}
+
+.mini-glowing-label {
+  @apply flex items-center gap-2 px-5 py-2 rounded-full 
+         text-neonCyan font-bold text-base 
+         transition-all duration-300 ease-in-out;
+  background: rgba(0, 245, 255, 0.2); 
+}
+
+/* ✅ Fix: Make border & glow match background */
+.bg-blue-500 {
+  @apply border-blue-500 shadow-[0_0_15px_#00aaff];
+}
+
+.bg-pink-500 {
+  @apply border-pink-500 shadow-[0_0_15px_#ff00ff];
+}
+
+.bg-yellow-500 {
+  @apply border-yellow-500 shadow-[0_0_15px_#ffdd00];
+}
+
+.bg-green-500 {
+  @apply border-green-500 shadow-[0_0_15px_#00ff00];
+}
+
+.bg-purple-500 {
+  @apply border-purple-500 shadow-[0_0_15px_#a000ff];
+}
+
+/* ✅ Glow Intensifies on Hover */
+.mini-glowing-label:hover {
+  @apply scale-[1.02] transition-transform duration-300 shadow-neon;
+}
+
+.mini-label-icon {
+  @apply text-neonCyan;
+}
+
+/* ✅ Ensure Each Button’s Glow Matches Its Color on Hover */
+.bg-blue-500:hover {
+  box-shadow: 0 0 30px 8px #00aaff;
+}
+
+.bg-pink-500:hover {
+  box-shadow: 0 0 30px 8px #ff00ff;
+}
+
+.bg-yellow-500:hover {
+  box-shadow: 0 0 30px 8px #ffdd00;
+}
+
+.bg-green-500:hover {
+  box-shadow: 0 0 30px 8px #00ff00;
+}
+
+.bg-purple-500:hover {
+  box-shadow: 0 0 30px 8px #a000ff;
+}
+
+/* ✅ Left-aligned Body Text */
+.models-body-text {
+  @apply text-base py-5 text-left pl-10;
+  font-family: "Rajdhani", sans-serif;
+}

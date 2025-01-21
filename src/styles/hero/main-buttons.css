@@ -1,0 +1,54 @@
+/* === Default Circular Button (Cyan for All Except Special) === */
+.glowing-button {
+    @apply h-[80px] flex items-center justify-center 
+           rounded-full border-2 border-neonCyan 
+           shadow-[inset_0_0_15px_#00f5ff44,_0_0_20px_#00f5ff99] 
+           overflow-hidden relative transition-all duration-500 ease-in-out;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80px;
+}
+
+/* === Expanded Button (Hover State) === */
+.group:hover .glowing-button {
+    @apply min-w-max h-[80px] rounded-[50px] flex items-center justify-start px-6 pr-12;
+}
+
+/* === Default Button Icon (Cyan) === */
+.button-icon {
+    @apply text-neonCyan text-5xl flex-shrink-0 transition-all duration-500 ease-in-out;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.special-glow {
+    border: 2px solid #00aaff !important; 
+    box-shadow: inset 0 0 15px #00aaff44, 0 0 20px #00eaff !important; 
+}
+
+/* === Special Icon (CyberBlue Instead of Cyan) === */
+.special-icon {
+    color: #00aaff !important; /* ✅ CyberBlue text */
+}
+
+/* === Button Text (Cyan Default, CyberBlue for Special) === */
+.button-text {
+    @apply invisible opacity-0 text-neonCyan text-2xl transition-opacity duration-500 ease-in-out whitespace-nowrap;
+    position: absolute;
+    left: 20px;
+}
+
+/* === Special Button Text (CyberBlue) === */
+.special-text {
+    color: #00aaff !important;  /* ✅ CyberBlue text */
+}
+
+/* === Reveal Text Smoothly on Hover === */
+.group:hover .button-text {
+    @apply visible opacity-100;
+    transition-delay: 0.2s;
+    position: relative;
+}

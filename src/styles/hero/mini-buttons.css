@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Mini Buttons (Default) === */
+.mini-button {
+    @apply flex items-center px-4 py-2 rounded-[30px] 
+           bg-neonCyan text-darkGrey font-bold text-base 
+           border-2 border-neonCyan shadow-glow 
+           transition-all duration-300 ease-in-out;
+}
+
+/* === Resume Button (Retains Text) === */
+.resume-button {
+    @apply px-4 py-2 rounded-[30px] bg-neonCyan text-darkGrey font-bold gap-4;
+}
+
+/* === Circular Mini Buttons (Only Icon) === */
+.mini-icon-button {
+    @apply w-[50px] h-[50px] flex justify-center items-center 
+           rounded-full border-2 border-neonCyan bg-neonCyan shadow-glow;
+}
+
+/* === Mini Button Icon Styling === */
+.mini-icon {
+    @apply text-darkGrey text-2xl;
+}
+
+/* === Mini Button Hover Glow Effect === */
+.mini-button:hover {
+    @apply shadow-[0_0_15px_#00f5ff,0_0_30px_#00f5ff];
+}
+
+/* Fix: Prevent mini-buttons from disappearing on hover */
+.mini-button-container {
+    @apply relative z-10;
+}
+
+

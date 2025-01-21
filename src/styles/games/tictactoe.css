@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* === Tic-Tac-Toe Board === */
+    .tictactoe-board {
+        @apply grid grid-cols-3 gap-1 mt-6 border-neonCyan rounded-lg shadow-panelInset p-3;
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+    }
+
+    /* === Tic-Tac-Toe Cells === */
+    .tictactoe-cell {
+        @apply flex items-center justify-center cursor-pointer 
+               text-4xl font-bold tracking-wider 
+               border-[1px] border-neonCyan shadow-neon 
+               bg-panelGradient transition-all ease-in-out;
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+    }
+
+    /* === Hover Effect for Available Moves === */
+    .tictactoe-cell:hover {
+        @apply bg-neonCyan text-black shadow-glow;
+    }
+
+    /* === Winning Cells Animation === */
+    .winning-cell {
+        animation: win-glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes win-glow {
+        0% { background-color: rgba(0, 255, 191, 0.3); }
+        100% { background-color: rgba(0, 255, 191, 0.7); }
+    }
+
+    /* === Player Icons (X and O) === */
+    .icon-x, .icon-o {
+        font-size: 3rem;
+        text-shadow: 0 0 10px rgba(0, 245, 255, 0.9);
+    }
+
+    .icon-x {
+        color: #00f5ff;
+    }
+
+    .icon-o {
+        color: #ff007f;
+    }
+
+    /* === Status Message (Colored Text Instead of BG) === */
+    .status-message {
+        @apply text-lg font-bold py-3 px-6 text-center mt-4 uppercase tracking-wide;
+        width: fit-content;
+        margin: 0 auto;
+        font-family: "Rajdhani", sans-serif;
+    }
+
+    /* === Color-coded Text for Status Messages === */
+    .status-message.win { color: #00ff00; text-shadow: 0 0 12px #00ff00; }
+    .status-message.lose { color: #ff0000; text-shadow: 0 0 12px #ff0000; }
+    .status-message.draw { color: #ffff00; text-shadow: 0 0 12px #ffff00; }
+    .status-message.thinking { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
+
+    /* === Button Container (Aligns Buttons to the Right) === */
+    .button-container {
+        @apply flex justify-end gap-4 mt-4;
+    }
+
+    /* === Circular Buttons (Clear Board & Toggle Player) === */
+    .circle-button {
+        @apply w-12 h-12 flex items-center justify-center rounded-full 
+               border-2 border-neonCyan shadow-neon transition-all 
+               text-white text-xl cursor-pointer bg-neonCyan;
+    }
+
+    .circle-button:hover {
+        transform: scale(1.1);
+    }
+
+    /* === Reset Icon (FontAwesome) === */
+    .reset-icon {
+        @apply text-gray-800;
+        font-size: 1.5rem;
+    }
+
+    /* === Player Toggle Icon === */
+    .player-icon {
+        @apply text-gray-800;
+        font-size: 1.8rem;
+    }
+}
