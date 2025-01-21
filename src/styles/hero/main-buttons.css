@@ -1,12 +1,19 @@
+/* === Glowing Button with Gradient Border === */
 .glowing-button {
     @apply h-[80px] flex items-center justify-center 
-           rounded-full border-2 border-neonCyan 
+           rounded-full border-2 
            shadow-[inset_0_0_15px_#00f5ff44,_0_0_20px_#00f5ff99] 
            overflow-hidden relative transition-all duration-500 ease-in-out;
     position: relative;
     background-color: rgba(0, 0, 0, 0.8);
     width: 80px;
     min-width: 0; /* ✅ Allows buttons to shrink when others expand */
+
+    /* ✅ Gradient Border */
+    border: 2px solid transparent;
+    background-image: linear-gradient(#000, #000), linear-gradient(135deg, #00ffbf, #4c87f5);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 /* === Expanded Button (Hover State) === */
@@ -14,29 +21,34 @@
     @apply min-w-max h-[80px] rounded-[50px] flex items-center justify-start px-6 pr-12;
 }
 
-/* === Default Button Icon (Cyan) === */
+/* === Default Button Icon (Uses Gradient) === */
 .button-icon {
-    @apply text-neonCyan text-5xl flex-shrink-0 transition-all duration-500 ease-in-out;
+    @apply text-5xl flex-shrink-0 transition-all duration-500 ease-in-out;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* ✅ Apply Gradient to Icons */
+    background: linear-gradient(135deg, #00ffbf, #4c87f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+/* === Special Icon (No Gradient) === */
+.special-icon {
+    color: rgb(129, 116, 231);
+}
+
+/* === Special Glow Effect (Pink → Blue Neon) === */
 .special-glow {
-    border: 2px solid transparent !important; /* ✅ Remove solid border */
+    border: 2px solid transparent !important;
     background-image: linear-gradient(#000, #000), 
-                      linear-gradient(90deg, #ff00ff, #00aaff); /* ✅ Pink → Blue Gradient */
+                      linear-gradient(135deg, #ff00ff, #00aaff);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     box-shadow: inset 0 0 15px #00aaff44, 0 0 20px #bc40ff !important; 
-}
-
-/* === Special Icon (Pink → Blue Neon Gradient) === */
-.special-icon {
-    color: rgb(129, 116, 231);
-    text-color: linear-gradient(90deg, #ff00ff, #00aaff)!important; /* ✅ Pink → Blue Gradient */
 }
 
 /* === Button Text (Cyan Default, CyberBlue for Special) === */
@@ -48,7 +60,7 @@
 
 /* === Special Button Text (CyberBlue) === */
 .special-text {
-    color: #00aaff !important;  /* ✅ CyberBlue text */
+    color: #00aaff !important;
 }
 
 /* === Reveal Text Smoothly on Hover === */

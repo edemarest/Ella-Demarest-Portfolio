@@ -28,15 +28,26 @@ const HeroSection = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Function to handle clicking on buttons that should scroll to a section
+    // Function to handle scrolling to sections if on the home page
     const handleNavigation = (id) => {
         if (location.pathname === "/") {
-            // If already on the home page, scroll directly
             scrollToSection(id);
         } else {
-            // Store the target section ID and navigate to home
             sessionStorage.setItem("scrollTo", id);
             navigate("/");
+        }
+    };
+
+    // Function to handle button clicks properly
+    const handleButtonClick = (button) => {
+        if (button.action) {
+            button.action(); // Scroll behavior
+        } else if (button.link) {
+            if (button.link.startsWith("http")) {
+                window.open(button.link, "_blank"); // Open external links in a new tab
+            } else {
+                navigate(button.link); // Internal navigation using React Router
+            }
         }
     };
 
@@ -117,7 +128,7 @@ const HeroSection = () => {
                     {heroButtons.map((btn) => (
                         <button
                             key={btn.id}
-                            onClick={btn.action || (() => (window.location.href = btn.link))}
+                            onClick={() => handleButtonClick(btn)}
                             className="relative flex items-center group"
                         >
                             <div className={`glowing-button transition-all duration-500 ease-in-out ${btn.special ? "special-glow" : ""}`}>
