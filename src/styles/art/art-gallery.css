@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* === 🎨 ART CONTAINER === */
+  .art-gallery-container {
+    @apply w-[95%] mx-auto text-center py-10 pl-10;
+  }
+
+  .art-gallery-header {
+    @apply text-left mb-8;
+  }
+
+  .art-title {
+    font-family: "Orbitron", sans-serif;
+    @apply text-4xl font-bold text-deepBlue tracking-wide;
+  }
+
+  /* === 🎨 ART GRID === */
+  .art-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 p-5;
+  }
+
+  /* === 🖼 ART FRAME === */
+  .art-frame {
+    @apply relative p-4 border-4 border-darkGrey bg-panelGradient shadow-lg rounded-lg;
+    width: 280px;
+    height: 320px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* === ✨ ROTATE SLIGHTLY ON HOVER === */
+  .art-frame:hover {
+    transform: rotate(3deg) scale(1.05);
+  }
+
+  /* 🎭 ADD RANDOM ROTATION TO IMITATE PINNED ART */
+  .tilt-0 {
+    transform: rotate(-2deg);
+  }
+  .tilt-1 {
+    transform: rotate(2deg);
+  }
+  .tilt-2 {
+    transform: rotate(-4deg);
+  }
+
+  /* === 🎗️ TAPE EFFECT === */
+  .art-tape {
+    @apply absolute bg-deepBlue opacity-50 w-12 h-4;
+  }
+
+  .tape-top {
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg);
+  }
+
+  .tape-bottom {
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+  }
+
+  /* === 🖼 ART IMAGE === */
+  .art-image {
+    @apply w-full h-full object-cover rounded-lg;
+  }
+}

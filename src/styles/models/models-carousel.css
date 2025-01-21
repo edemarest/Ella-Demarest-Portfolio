@@ -12,11 +12,11 @@
 }
 
 .models-icon {
-    @apply text-neonCyan text-4xl mr-3;
+    @apply text-cyberBlue text-4xl mr-3;
 }
 
 .models-title {
-    @apply text-3xl font-bold text-neonCyan tracking-wide;
+    @apply text-3xl font-bold text-cyberBlue tracking-wide;
 }
 
 /* === Carousel Wrapper (Increased Height & Centered) === */
@@ -49,7 +49,7 @@
 }
 
 .model-frame {
-    @apply border-2 border-neonCyan;
+    @apply border-2 border-cyberBlue;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -25,13 +25,18 @@
 }
 
 .special-glow {
-    border: 2px solid #00aaff !important; 
-    box-shadow: inset 0 0 15px #00aaff44, 0 0 20px #00eaff !important; 
+    border: 2px solid transparent !important; /* ✅ Remove solid border */
+    background-image: linear-gradient(#000, #000), 
+                      linear-gradient(90deg, #ff00ff, #00aaff); /* ✅ Pink → Blue Gradient */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: inset 0 0 15px #00aaff44, 0 0 20px #bc40ff !important; 
 }
 
-/* === Special Icon (CyberBlue Instead of Cyan) === */
+/* === Special Icon (Pink → Blue Neon Gradient) === */
 .special-icon {
-    color: #00aaff !important; /* ✅ CyberBlue text */
+    color: rgb(129, 116, 231);
+    text-color: linear-gradient(90deg, #ff00ff, #00aaff)!important; /* ✅ Pink → Blue Gradient */
 }
 
 /* === Button Text (Cyan Default, CyberBlue for Special) === */

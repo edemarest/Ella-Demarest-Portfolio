@@ -5,20 +5,20 @@
 /* === Mini Buttons (Default) === */
 .mini-button {
     @apply flex items-center px-4 py-2 rounded-[30px] 
-           bg-neonCyan text-darkGrey font-bold text-base 
-           border-2 border-neonCyan shadow-glow 
+           bg-cyberBlue text-darkGrey font-bold text-base 
+           border-2 border-cyberBlue shadow-glow 
            transition-all duration-300 ease-in-out;
 }
 
 /* === Resume Button (Retains Text) === */
 .resume-button {
-    @apply px-4 py-2 rounded-[30px] bg-neonCyan text-darkGrey font-bold gap-4;
+    @apply px-4 py-2 rounded-[30px] bg-cyberBlue text-darkGrey font-bold gap-4;
 }
 
 /* === Circular Mini Buttons (Only Icon) === */
 .mini-icon-button {
     @apply w-[50px] h-[50px] flex justify-center items-center 
-           rounded-full border-2 border-neonCyan bg-neonCyan shadow-glow;
+           rounded-full border-2 border-cyberBlue bg-cyberBlue shadow-glow;
 }
 
 /* === Mini Button Icon Styling === */

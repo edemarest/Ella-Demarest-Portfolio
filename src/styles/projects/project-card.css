@@ -49,7 +49,7 @@
     /* === 📦 PROJECT CARD (Default Square) === */
     .project-card {
         @apply relative bg-panelGradient rounded-lg p-5 border-[1px] border-neonCyan 
-            shadow-neon overflow-hidden transition-all duration-200 ease-in-out flex flex-col justify-between items-center text-left;
+            overflow-hidden transition-all duration-200 ease-in-out flex flex-col justify-between items-center text-left;
         width: 20%;
         transform: scale(1); /* Default size */
     }
@@ -57,6 +57,7 @@
     /* === 🖱️ Scale Up Slightly on Hover === */
     .project-card:hover {
         transform: scale(1.01); /* Expand slightly */
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.7);
     }    
 
     /* === 🔄 EXPAND/COLLAPSE ANIMATION === */
@@ -209,10 +210,12 @@
 
     /* === 💫 ANIMATED TRANSITIONS === */
     .project-card {
-        @apply relative bg-panelGradient rounded-lg p-5 border-[1px] border-green-500 shadow-neon overflow-hidden transition-all duration-500 text-left;
+        @apply relative bg-panelGradient rounded-lg p-5 border-[1px] border-neonCyan  overflow-hidden transition-all duration-500 text-left;
         width: 95%;
         min-width: 300px;
         height: auto;
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+        border-color: rgba(0, 245, 255, 0.5);
     }
 
     /* Ensure content fills available space so the button stays at the bottom */

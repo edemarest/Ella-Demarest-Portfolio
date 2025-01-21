@@ -1,7 +1,7 @@
 [
     {
-      "url": "/assets/models/car.glb",
-      "camera": { "position": [45, 30, 75], "fov": 10 }
+      "url": "/assets/models/Audi.glb",
+      "camera": { "position": [60, 13,80], "fov": 11 }
     },
     {
         "url": "/assets/models/mario.glb",
@@ -9,27 +9,27 @@
       },
       {
         "url": "/assets/models/Portal.glb",
-        "camera": { "position": [90, 20, 105], "fov": 7 }
+        "camera": { "position": [100, 100, 260], "fov": 7 }
       },
       {
-        "url": "/assets/models/BoneWings.glb",
-        "camera": { "position": [0, 20, 75], "fov": 10 }
-      },
-      {
-        "url": "/assets/models/Audi.glb",
-        "camera": { "position": [45, 30, 75], "fov": 10 }
+        "url": "/assets/models/car.glb",
+        "camera": { "position": [90, 30, 120], "fov": 10 }
       },
       {
         "url": "/assets/models/Cammy.glb",
-        "camera": { "position": [45, 30, 75], "fov": 10 }
+        "camera": { "position": [45, 30, 75], "fov": 8 }
       },
       {
         "url": "/assets/models/TreasureChest.glb",
-        "camera": { "position": [45, 30, 75], "fov": 10 }
+        "camera": { "position": [45, 20, 75], "fov": 5 }
+      },
+      {
+        "url": "/assets/models/BoneWings.glb",
+        "camera": { "position": [0, 0, 40], "fov": 11 }
       },
       {
         "url": "/assets/models/Wings.glb",
-        "camera": { "position": [45, 30, 75], "fov": 10 }
+        "camera": { "position": [150, 30, 75], "fov": 4 }
       }
   ]
   

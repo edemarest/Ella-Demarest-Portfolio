@@ -23,6 +23,8 @@ module.exports = {
         neonCyan: "#00ffbf",
         cyberBlue: "#00eaff",
         cyberTextGrey: "#d1d5db",
+        deepBlue: "#4c87f5",
+        purpleBlue: "#4c87f5"
       },
       boxShadow: {
         neon: "0px 0px 15px 3px #00f5ff",

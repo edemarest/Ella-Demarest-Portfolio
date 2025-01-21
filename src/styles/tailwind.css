@@ -13,7 +13,7 @@ body {
 
 /* === Glowing Green Line === */
 .glowing-green {
-  @apply bg-neonCyan shadow-[0px_0px_15px_3px_#00ffbf];
+  @apply bg-cyberBlue shadow-[0px_0px_15px_3px_#00ffbf];
 }
 
 /* === Pulsing Effect for Elements === */
@@ -67,32 +67,19 @@ body {
   }
 }
 
-.mini-glowing-label {
+.mini-glowing-label-green {
   @apply flex items-center gap-2 px-5 py-2 rounded-full 
          text-neonCyan font-bold text-base 
          transition-all duration-300 ease-in-out;
-  background: rgba(0, 245, 255, 0.2); 
+  background: rgba(54, 224, 210, 0.25); 
+  
 }
-
-/* ✅ Fix: Make border & glow match background */
-.bg-blue-500 {
-  @apply border-blue-500 shadow-[0_0_15px_#00aaff];
-}
-
-.bg-pink-500 {
-  @apply border-pink-500 shadow-[0_0_15px_#ff00ff];
-}
-
-.bg-yellow-500 {
-  @apply border-yellow-500 shadow-[0_0_15px_#ffdd00];
-}
-
-.bg-green-500 {
-  @apply border-green-500 shadow-[0_0_15px_#00ff00];
-}
-
-.bg-purple-500 {
-  @apply border-purple-500 shadow-[0_0_15px_#a000ff];
+.mini-glowing-label {
+  @apply flex items-center gap-2 px-5 py-2 rounded-full 
+         text-cyberBlue font-bold text-base 
+         transition-all duration-300 ease-in-out bg-deepBlue;
+  background: rgba(54, 113, 224, 0.35); 
+  
 }
 
 /* ✅ Glow Intensifies on Hover */
@@ -101,28 +88,10 @@ body {
 }
 
 .mini-label-icon {
+  @apply text-cyberBlue;
+}
+.mini-label-icon-green {
   @apply text-neonCyan;
-}
-
-/* ✅ Ensure Each Button’s Glow Matches Its Color on Hover */
-.bg-blue-500:hover {
-  box-shadow: 0 0 30px 8px #00aaff;
-}
-
-.bg-pink-500:hover {
-  box-shadow: 0 0 30px 8px #ff00ff;
-}
-
-.bg-yellow-500:hover {
-  box-shadow: 0 0 30px 8px #ffdd00;
-}
-
-.bg-green-500:hover {
-  box-shadow: 0 0 30px 8px #00ff00;
-}
-
-.bg-purple-500:hover {
-  box-shadow: 0 0 30px 8px #a000ff;
 }
 
 /* ✅ Left-aligned Body Text */
