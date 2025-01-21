@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { FaCubes, FaGlobe, FaShapes, FaStar, FaCamera, FaRobot, FaPaintBrush, FaPen, FaSprayCan } from "react-icons/fa";
+import { FaCubes, FaPaintBrush, FaSprayCan } from "react-icons/fa";
 import { SiBlender, SiAdobe } from "react-icons/si";
 import ModelViewer from "./ModelViewer";
 import "slick-carousel/slick/slick.css";
@@ -45,7 +45,7 @@ const Models = () => {
   ];
 
   return (
-    <div className="models-container">
+    <div className="models-container pl-10">
       {/* Header */}
       <div className="models-header">
         <FaCubes className="models-icon" />

@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaCode, FaCubes, FaTwitter, FaDownload, FaPencilRuler, FaGamepad, FaHandPeace } from "react-icons/fa";
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import {
+    FaGithub,
+    FaLinkedin,
+    FaCode,
+    FaCubes,
+    FaTwitter,
+    FaDownload,
+    FaPencilRuler,
+    FaGamepad,
+    FaHandPeace
+} from "react-icons/fa";
 import "../styles/hero/main-buttons.css";
 import "../styles/hero/mini-buttons.css";
 import "../styles/hero/banner.css";
 
-// Scroll to Section Function
+// Function to smoothly scroll to a section
 const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -12,36 +23,39 @@ const scrollToSection = (id) => {
     }
 };
 
-// Debug log function
-const logButtonData = () => {
-    console.log("Hero Buttons:", heroButtons);
-    console.log("Mini Buttons:", miniButtons);
-};
-
-// Define Hero Buttons
-const heroButtons = [
-    { id: 1, label: "Projects", icon: <FaCode />, action: () => scrollToSection("projects-section") },
-    { id: 2, label: "3D Models", icon: <FaCubes />, action: () => scrollToSection("models-section") },
-    { id: 3, label: "Design", icon: <FaPencilRuler />, link: "/" },
-    { id: 4, label: "About Me", icon: <FaHandPeace />, link: "https://twitter.com" },
-    { id: 5, label: "Games", icon: <FaGamepad />, link: "/games", special: true },
-];
-
-// Define Mini Buttons
-const miniButtons = [
-    { id: 1, label: "Resume", icon: <FaDownload />, link: "/assets/Ella_Demarest_Resume_2025.pdf", isDownload: true },
-    { id: 2, icon: <FaLinkedin />, link: "https://www.linkedin.com/in/ella-demarest-b48553189/" },
-    { id: 3, icon: <FaGithub />, link: "https://github.com/edemarest" },
-    { id: 4, icon: <FaTwitter />, link: "https://x.com/PhantomMisty" },
-];
-
 const HeroSection = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    // Run debug logs once when the component mounts
-    useEffect(() => {
-        logButtonData();
-    }, []);
+    // Function to handle clicking on buttons that should scroll to a section
+    const handleNavigation = (id) => {
+        if (location.pathname === "/") {
+            // If already on the home page, scroll directly
+            scrollToSection(id);
+        } else {
+            // Store the target section ID and navigate to home
+            sessionStorage.setItem("scrollTo", id);
+            navigate("/");
+        }
+    };
+
+    // Define hero buttons
+    const heroButtons = [
+        { id: 1, label: "Projects", icon: <FaCode />, action: () => handleNavigation("projects-section") },
+        { id: 2, label: "3D Models", icon: <FaCubes />, action: () => handleNavigation("models-section") },
+        { id: 3, label: "Design", icon: <FaPencilRuler />, link: "/" },
+        { id: 4, label: "About Me", icon: <FaHandPeace />, link: "https://twitter.com" },
+        { id: 5, label: "Games", icon: <FaGamepad />, link: "/games", special: true },
+    ];
+
+    // Define mini buttons
+    const miniButtons = [
+        { id: 1, label: "Resume", icon: <FaDownload />, link: "/assets/Ella_Demarest_Resume_2025.pdf", isDownload: true },
+        { id: 2, icon: <FaLinkedin />, link: "https://www.linkedin.com/in/ella-demarest-b48553189/" },
+        { id: 3, icon: <FaGithub />, link: "https://github.com/edemarest" },
+        { id: 4, icon: <FaTwitter />, link: "https://x.com/PhantomMisty" },
+    ];
 
     return (
         <div>
@@ -58,7 +72,9 @@ const HeroSection = () => {
 
                 {/* Video Background (Appears on hover) */}
                 <video
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${isHovered ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${
+                        isHovered ? "opacity-100" : "opacity-0"
+                    }`}
                     autoPlay
                     loop
                     muted
