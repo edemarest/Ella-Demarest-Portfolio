@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import GamesPage from "./pages/GamesPage"; // ✅ Import new Games page
-import Footer from "./components/Footer";
 
 function App() {
   return (
