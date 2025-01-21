@@ -50,7 +50,7 @@ const ProjectsGrid = () => {
   ];
 
   return (
-    <div className="projects-container">
+    <div className="projects-container pt-8">
       {/* Title with React Code Icon */}
       <div className="projects-header">
         <FaCode className="projects-icon" />
@@ -58,14 +58,15 @@ const ProjectsGrid = () => {
       </div>
 
       {/* Mini Labels Below Title */}
-      <div className="mini-buttons-container flex flex-row gap-4 py-3">
+      <div className="mini-buttons-container grid grid-cols-2 gap-4 py-3 sm:flex sm:flex-wrap sm:justify-center">
         {projectLabels.map((label) => (
-          <span key={label.id} className={`mini-glowing-label-green ${label.bg}`}>
+          <span key={label.id} className="mini-glowing-label-green justify-center">
             <span className="mini-label-icon-green">{label.icon}</span>
             {label.label}
           </span>
         ))}
       </div>
+
 
       {/* Dynamic Grid Layout */}
       <div className={`projects-grid ${expandedProject ? "expanded-grid" : ""}`}>
