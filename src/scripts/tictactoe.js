@@ -16,10 +16,10 @@ export const checkWinner = (board) => {
 
 // Calls the backend AI server at port 5050
 export const botMove = async (board, botSymbol, difficulty, turn) => {
-    console.log(`[DEBUG] Turn ${turn} | Sending AI move request | Board: ${JSON.stringify(board)} | Bot: ${botSymbol} | Difficulty: ${difficulty}`);
+    console.log(`[DEBUG] Turn ${turn} | Sending AI move request`);
 
     try {
-        const response = await fetch("http://localhost:5050/api/move", {
+        const response = await fetch("https://tictactoe-ai.onrender.com/api/move", { // Use Render URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ board, botSymbol, difficulty })
@@ -27,25 +27,12 @@ export const botMove = async (board, botSymbol, difficulty, turn) => {
 
         const data = await response.json();
         console.log(`[DEBUG] AI move received: ${data.move}`);
-
-        if (data.move === undefined || data.move < 0 || data.move > 8 || board[data.move] !== null) {
-            console.error(`[ERROR] AI returned invalid move (${data.move}). Retrying with a valid move.`);
-            
-            // Pick a valid move from empty spaces
-            const validMoves = board.map((cell, idx) => (cell === null ? idx : null)).filter(val => val !== null);
-            return validMoves.length > 0 ? validMoves[Math.floor(Math.random() * validMoves.length)] : -1;
-        }
-
         return data.move;
     } catch (error) {
         console.error("[ERROR] AI move error:", error);
-        
-        // Pick a valid move in case of server error
-        const validMoves = board.map((cell, idx) => (cell === null ? idx : null)).filter(val => val !== null);
-        return validMoves.length > 0 ? validMoves[Math.floor(Math.random() * validMoves.length)] : -1;
+        return -1; 
     }
 };
-
 // Handles difficulty switch
 export const resetGame = (setBoard, setWinner, setIsBotTurn, setTurn, newDifficulty) => {
     console.log(`[DEBUG] Difficulty changed to: ${newDifficulty} | Resetting game...`);

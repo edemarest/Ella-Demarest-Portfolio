@@ -35,6 +35,9 @@ module.exports = {
         cyberGradient: "radial-gradient(circle at top left, rgba(0, 245, 255, 0.3), transparent)",
         panelGradient: "linear-gradient(to top, #333333, #0d0d0d)",
         specialGradient: "linear-gradient(90deg, #ff007f, #00f5ff)",
+        backgroundImage: {
+          neonCyanDeepBlue: "linear-gradient(90deg, #00ffbf, #4c87f5)",
+        },
       },
       keyframes: {
         pulseGlow: {
