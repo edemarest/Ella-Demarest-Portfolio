@@ -25,7 +25,6 @@ const Home = () => {
                 <ProjectsGrid />
             </div>
             <div id="models-section">
-                <Models />
             </div>
             <div id="art-section">
                 <ArtGallery />
