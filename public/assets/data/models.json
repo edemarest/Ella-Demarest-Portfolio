@@ -4,12 +4,12 @@
       "camera": { "position": [45, 30, 75], "fov": 10 }
     },
     {
-        "url": "/assets/models/car.glb",
+        "url": "/assets/models/mario.glb",
         "camera": { "position": [90, 40, 105], "fov": 10 }
       },
       {
         "url": "/assets/models/car.glb",
-        "camera": { "position": [0, 20, 75], "fov": 10 }
+        "camera": { "position": [90, 40, 105], "fov": 8 }
       },
       {
         "url": "/assets/models/car.glb",
