@@ -1,7 +1,6 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import ProjectsGrid from "../components/ProjectsGrid";
-import Models from "../components/Models.jsx";
 import { useEffect } from "react";
 import ArtGallery from "../components/ArtGallery.jsx";
 
