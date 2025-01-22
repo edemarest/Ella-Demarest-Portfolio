@@ -16,13 +16,33 @@ app.listen(PORT, () => {
     console.log(`✅ Server running on port ${PORT}`);
 });
 
+app.get("/api/move", (req, res) => {
+    res.status(405).send("Method Not Allowed. Use POST instead.");
+});
+
+
+if (!process.env.OPENAI_API_KEY) {
+    console.error("[ERROR] OPENAI_API_KEY is missing!");
+    return res.status(500).json({ error: "Missing OpenAI API Key" });
+}
+
+
 app.use(cors({
-    origin: "https://ellademarestportfolio.netlify.app", // ✅ Allow only Netlify frontend
-    methods: ["GET", "POST", "OPTIONS"], // ✅ Allow OPTIONS for preflight
+    origin: "https://ellademarestportfolio.netlify.app",
+    methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
-app.use(express.json()); // ✅ Parse JSON request body
+
+// ✅ Handle CORS preflight manually
+app.options("*", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://ellademarestportfolio.netlify.app");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    return res.sendStatus(204);
+});
+
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY, // ✅ Use correct variable (No `REACT_APP_` in backend)
