@@ -4,20 +4,26 @@ const cors = require("cors");
 const { OpenAI } = require("openai");
 
 const app = express();
-const PORT = process.env.PORT || 10000; 
+const PORT = process.env.PORT || 10000;
+
+// ✅ Ensure OpenAI API key is set
+if (!process.env.OPENAI_API_KEY) {
+    console.error("❌ ERROR: OPENAI_API_KEY is missing in .env file.");
+    process.exit(1);
+}
 
 // ✅ Initialize OpenAI Client
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY, // Ensure your .env file contains OPENAI_API_KEY
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 app.use(express.json());
 
-// ✅ Improved CORS Configuration
+// ✅ CORS Configuration (NO DUPLICATES)
 const allowedOrigins = ["https://ellademarestportfolio.netlify.app"];
 
 app.use(cors({
-    origin: function (origin, callback) {
+    origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
@@ -29,13 +35,14 @@ app.use(cors({
     credentials: true,
 }));
 
+// ✅ Handle preflight OPTIONS requests
 app.options("*", (req, res) => res.sendStatus(204));
 
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
 app.get("/", (req, res) => res.send("✅ Tic-Tac-Toe AI Server is running!"));
 
-// ✅ Construct ASCII board for OpenAI
+// ✅ Convert board to ASCII format
 const constructAsciiBoard = (board) => `
     ${board[0] ?? "0"} | ${board[1] ?? "1"} | ${board[2] ?? "2"}
     --+---+--
@@ -104,7 +111,9 @@ ${asciiBoard}
         return res.json({ move: aiMove ?? emptyIndices[0] }); 
     } catch (error) {
         console.error("[ERROR] AI Move Error:", error);
-        return res.status(500).json({ error: "AI API failed", move: -1 });
+
+        // ✅ Proper error handling with safe defaults
+        return res.status(500).json({ error: "AI API failed", move: emptyIndices.length > 0 ? emptyIndices[0] : -1 });
     }
 });
 
