@@ -6,6 +6,15 @@ const { OpenAI } = require("openai");
 const app = express();
 const PORT = process.env.PORT || 10000; // ✅ Render dynamically assigns the PORT
 
+app.use((req, res, next) => {
+    console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
+    next();
+});
+
+// ✅ Start Server
+app.listen(PORT, () => {
+    console.log(`✅ Server running on port ${PORT}`);
+});
 
 app.use(cors({
     origin: "https://ellademarestportfolio.netlify.app", // ✅ Allow only Netlify frontend
@@ -19,26 +28,10 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY, // ✅ Use correct variable (No `REACT_APP_` in backend)
 });
 
-// ✅ Function to find a blocking move
-const findBlockingMove = (board, playerSymbol) => {
-    const winPatterns = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], 
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
-        [0, 4, 8], [2, 4, 6]
-    ];
-
-    for (let pattern of winPatterns) {
-        const values = pattern.map(index => board[index]);
-        const emptyIndex = pattern.find(index => board[index] === null);
-        const playerCount = values.filter(v => v === playerSymbol).length;
-        const emptyCount = values.filter(v => v === null).length;
-
-        if (playerCount === 2 && emptyCount === 1) {
-            return emptyIndex;
-        }
-    }
-    return null;
-};
+// ✅ Root Route (Check If Server is Running)
+app.get("/", (req, res) => {
+    res.send("✅ Tic-Tac-Toe AI Server is running!");
+});
 
 // ✅ Construct ASCII board for OpenAI
 const constructAsciiBoard = (board) => `
@@ -48,11 +41,6 @@ const constructAsciiBoard = (board) => `
     --+---+--
     ${board[6] ?? "6"} | ${board[7] ?? "7"} | ${board[8] ?? "8"}
 `;
-
-// ✅ Root Route (Check If Server is Running)
-app.get("/", (req, res) => {
-    res.send("✅ Tic-Tac-Toe AI Server is running!");
-});
 
 // ✅ AI Move Route
 app.post("/api/move", async (req, res) => {
@@ -118,7 +106,24 @@ ${asciiBoard}
     }
 });
 
-// ✅ Start Server
-app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
-});
+
+// ✅ Function to find a blocking move
+const findBlockingMove = (board, playerSymbol) => {
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+        [0, 4, 8], [2, 4, 6]
+    ];
+
+    for (let pattern of winPatterns) {
+        const values = pattern.map(index => board[index]);
+        const emptyIndex = pattern.find(index => board[index] === null);
+        const playerCount = values.filter(v => v === playerSymbol).length;
+        const emptyCount = values.filter(v => v === null).length;
+
+        if (playerCount === 2 && emptyCount === 1) {
+            return emptyIndex;
+        }
+    }
+    return null;
+};
