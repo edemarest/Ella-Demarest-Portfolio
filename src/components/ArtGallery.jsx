@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { FaPaintBrush, FaVectorSquare, FaPenNib} from "react-icons/fa";
+import SectionHeader from "../components/SectionHeader";
 import "../styles/art/art-gallery.css";
 
 const ArtGallery = () => {
@@ -14,12 +16,22 @@ const ArtGallery = () => {
       .catch((error) => console.error("❌ Error fetching art.json:", error));
   }, []);
 
+  const miniButtons = [
+    { id: 1, label: "Digital Art", icon: <FaPaintBrush /> },
+    { id: 2, label: "Vector Art", icon: <FaPenNib /> },
+    { id: 3, label: "UI Design", icon: <FaVectorSquare /> },
+  ];
+
   return (
     <div className="art-gallery-container">
-      {/* Title */}
-      <div className="art-gallery-header">
-        <h2 className="art-title">My Artworks</h2>
-      </div>
+        <SectionHeader
+          icon={<FaPaintBrush />}
+          title="Artwork & Design"
+          titleColor="text-deepBlue"
+          miniButtons={miniButtons}
+          buttonColor="purpleLabel"
+          description="I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, environment assets, vehicles, and more."
+      />
 
       {/* Artwork Grid */}
       <div className="art-grid">
@@ -36,3 +48,4 @@ const ArtGallery = () => {
 };
 
 export default ArtGallery;
+

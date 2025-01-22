@@ -3,24 +3,24 @@ import HeroSection from "../components/HeroSection";
 import ProjectsGrid from "../components/ProjectsGrid";
 import Models from "../components/Models.jsx";
 import ArtGallery from "../components/ArtGallery.jsx";
+import About from "../components/About.jsx";
+import "../styles/tailwind.css"; // ✅ Import the CSS file
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        // Detect if the device is mobile based on screen width
         const checkIfMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
 
-        checkIfMobile(); // Initial check
-        window.addEventListener("resize", checkIfMobile); // Update on resize
+        checkIfMobile();
+        window.addEventListener("resize", checkIfMobile);
 
         return () => window.removeEventListener("resize", checkIfMobile);
     }, []);
 
     useEffect(() => {
-        // Check if there's a stored section ID
         const scrollTo = sessionStorage.getItem("scrollTo");
         if (scrollTo) {
             setTimeout(() => {
@@ -31,8 +31,11 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className="relative">
+            {/* ✅ Hero Section (No Background) */}
             <HeroSection />
+
+            {/* ✅ Content Sections */}
             <div id="projects-section">
                 <ProjectsGrid />
             </div>
@@ -41,6 +44,9 @@ const Home = () => {
             </div>
             <div id="art-section">
                 <ArtGallery />
+            </div>
+            <div id="art-section">
+                <About />
             </div>
         </div>
     );

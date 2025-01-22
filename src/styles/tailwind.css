@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;700&family=Exo:wght@300;500;700&family=Quantico:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+@layer base {
+  /* === 🌌 Site Background (Excluding Hero Section) === */
+  .site-background {
+    @apply fixed top-0 left-0 w-full h-full z-[-1];
+
+    /* ✅ Ensures Background Stretches */
+    min-height: 100vh;
+    width: 100vw;
+
+    /* ✅ Background Properties */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+  }
+}
 header {
   display: none !important;
 }
@@ -65,37 +82,4 @@ body {
   .bg-cyber-gradient {
     @apply bg-cyberGradient;
   }
-}
-
-.mini-glowing-label-green {
-  @apply flex items-center gap-2 px-5 py-2 rounded-full 
-         text-neonCyan font-bold text-base 
-         transition-all duration-300 ease-in-out;
-  background: rgba(54, 224, 210, 0.25); 
-  
-}
-.mini-glowing-label {
-  @apply flex items-center gap-2 px-5 py-2 rounded-full 
-         text-cyberBlue font-bold text-base 
-         transition-all duration-300 ease-in-out bg-deepBlue;
-  background: rgba(54, 113, 224, 0.35); 
-  
-}
-
-/* ✅ Glow Intensifies on Hover */
-.mini-glowing-label:hover {
-  @apply scale-[1.02] transition-transform duration-300 shadow-neon;
-}
-
-.mini-label-icon {
-  @apply text-cyberBlue;
-}
-.mini-label-icon-green {
-  @apply text-neonCyan;
-}
-
-/* ✅ Left-aligned Body Text */
-.models-body-text {
-  @apply text-base py-5 text-left pl-10;
-  font-family: "Rajdhani", sans-serif;
 }

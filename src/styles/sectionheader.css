@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* === 🌟 Section Header Container === */
+  .section-header {
+    @apply text-left mb-6 mx-10;
+  }
+
+  /* === 🌟 Icon + Title on Same Line === */
+  .section-header-title {
+    @apply flex items-center gap-3 mb-3; /* ✅ Ensures proper spacing */
+  }
+
+  .section-icon {
+    @apply text-4xl;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-wide;
+  }
+
+  /* === ✨ Mini Buttons Aligned Properly === */
+  .mini-buttons-container {
+    @apply flex flex-wrap gap-4 py-3; /* ✅ Ensures buttons don't wrap incorrectly */
+  }
+
+  /* === ✨ Mini Glowing Labels (Base Style) === */
+  .mini-glowing-label {
+    @apply flex items-center gap-2 px-5 py-2 rounded-full font-bold text-base 
+           transition-all duration-300 ease-in-out;
+  }
+
+  /* === 🔥 Color Variants for Mini Buttons === */
+  .greenLabel {
+    @apply text-neonCyan;
+    background: rgba(54, 224, 210, 0.25);
+  }
+
+  .blueLabel {
+    @apply text-cyberBlue;
+    background: rgba(54, 173, 224, 0.35);
+  }
+
+  .purpleLabel {
+    @apply text-deepBlue;
+    background: rgba(60, 54, 224, 0.35);
+  }
+
+  .pinkLabel {
+    @apply text-pinkPurple;
+    background: rgba(110, 0, 244, 0.35);
+  }
+
+  /* === ✨ Hover Glow Effect (Based on Button Color) === */
+  .greenLabel:hover {
+    box-shadow: 0px 0px 15px 3px rgba(54, 224, 210, 0.4);
+  }
+
+  .blueLabel:hover {
+    box-shadow: 0px 0px 15px 3px rgba(54, 173, 224, 0.4);
+  }
+
+  .purpleLabel:hover {
+    box-shadow: 0px 0px 15px 3px rgba(60, 54, 224, 0.4);
+  }
+
+  .pinkLabel:hover {
+    box-shadow: 0px 0px 15px 3px rgba(169, 3, 252, 0.4);
+  }
+
+  /* ✅ Properly Aligned Description */
+  .section-body-text {
+    @apply text-base py-5 text-left;
+    font-family: "Rajdhani", sans-serif;
+    max-width: 750px;
+  }
+}

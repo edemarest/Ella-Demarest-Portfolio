@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { FaCubes, FaPaintBrush, FaSprayCan } from "react-icons/fa";
+import SectionHeader from "../components/SectionHeader";
 import { SiBlender, SiAdobe } from "react-icons/si";
 import ModelViewer from "./ModelViewer";
 import "slick-carousel/slick/slick.css";
@@ -27,7 +28,7 @@ const Models = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     centerMode: false,
     variableWidth: false,
@@ -48,27 +49,16 @@ const Models = () => {
   ];
 
   return (
-    <div className="models-container pl-10">
+    <div className="models-container pl-8">
       {/* Header */}
-      <div className="models-header">
-        <FaCubes className="models-icon" />
-        <h2 className="models-title">3D Models</h2>
-      </div>
-
-      {/* Left-Aligned Mini Buttons */}
-      <div className="mini-buttons-container flex flex-row gap-4 pl-10">
-        {miniButtons.map((btn) => (
-          <button key={btn.id} className={`mini-glowing-label`}>
-            <span className="mini-label-icon">{btn.icon}</span>
-            {btn.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Body Text Below Buttons */}
-      <p className="models-body-text">
-        I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, enviornment assets, vehicles, and more. I can create hand-painted textures (using Procreate's 3D painting and an apple pencil), or PBR textures using Substance Painter.
-      </p>
+      <SectionHeader
+        icon={<FaCubes />}
+        title="3D Models"
+        titleColor="text-cyberBlue"
+        miniButtons={miniButtons}
+        buttonColor="blueLabel"
+        description="I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, environment assets, vehicles, and more."
+      />
 
       {/* Carousel */}
       <div className="carousel-wrapper">

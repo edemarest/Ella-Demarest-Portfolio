@@ -11,27 +11,14 @@
     }
     /* === 🌟 PROJECTS CONTAINER === */
     .projects-container {
-        @apply w-[95%] p-6 mx-auto;
-    }
-
-    /* === 🔹 PROJECT HEADER (Title + Icon) === */
-    .projects-header {
-        @apply flex items-center gap-3 mb-4;
-    }
-
-    .projects-icon {
-        @apply text-neonCyan text-3xl;
-    }
-
-    .projects-title {
-        @apply text-3xl font-bold text-neonCyan;
+        @apply mx-auto;
     }
 
     /* === 🖼 PROJECTS GRID (DYNAMIC) === */
     .projects-grid {
-        @apply grid gap-4 p-0 sm:p-3 md:p-5  transition-all bg-black;
+        @apply grid gap-4 p-0 sm:px-3 md:px-5 transition-all;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        align-items: start;
+        align-items: center;
     }
 
     

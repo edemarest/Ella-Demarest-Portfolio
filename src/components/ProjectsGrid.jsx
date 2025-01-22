@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaCode, FaObjectGroup, FaCoffee } from "react-icons/fa";
 import { FaPython, FaJs, FaSwift, FaHtml5, FaCss3Alt, FaCuttlefish } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
+import SectionHeader from "../components/SectionHeader";
 import "../styles/projects/project-card.css";
 import { SiTypescript } from "react-icons/si";
 
@@ -38,7 +39,7 @@ const ProjectsGrid = () => {
   };
 
   // ✅ Mini Labels for Project Categories
-    const projectLabels = [
+    const miniButtons = [
       { id: 1, label: "Python", icon: <FaPython /> },
       { id: 2, label: "Java", icon: <FaCoffee /> },
       { id: 3, label: "JavaScript", icon: <FaJs /> },
@@ -50,23 +51,15 @@ const ProjectsGrid = () => {
   ];
 
   return (
-    <div className="projects-container pt-8">
-      {/* Title with React Code Icon */}
-      <div className="projects-header">
-        <FaCode className="projects-icon" />
-        <h2 className="projects-title">My Projects</h2>
-      </div>
-
-      {/* Mini Labels Below Title */}
-      <div className="mini-buttons-container grid grid-cols-2 gap-4 py-3 sm:flex sm:flex-wrap sm:justify-center">
-        {projectLabels.map((label) => (
-          <span key={label.id} className="mini-glowing-label-green justify-center">
-            <span className="mini-label-icon-green">{label.icon}</span>
-            {label.label}
-          </span>
-        ))}
-      </div>
-
+    <div className="projects-container pl-8 pt-8">
+      <SectionHeader
+        icon={<FaCode />}
+        title="Projects"
+        titleColor="text-neonCyan"
+        miniButtons={miniButtons}
+        buttonColor="greenLabel"
+        description="I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, environment assets, vehicles, and more."
+      />
 
       {/* Dynamic Grid Layout */}
       <div className={`projects-grid ${expandedProject ? "expanded-grid" : ""}`}>

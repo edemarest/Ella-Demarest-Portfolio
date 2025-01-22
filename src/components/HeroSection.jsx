@@ -15,20 +15,18 @@ import "../styles/hero/main-buttons.css";
 import "../styles/hero/mini-buttons.css";
 import "../styles/hero/banner.css";
 
-// Function to smoothly scroll to a section
-const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-    }
-};
-
 const HeroSection = () => {
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Function to handle scrolling to sections if on the home page
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     const handleNavigation = (id) => {
         if (location.pathname === "/") {
             scrollToSection(id);
@@ -38,29 +36,26 @@ const HeroSection = () => {
         }
     };
 
-    // Function to handle button clicks properly
     const handleButtonClick = (button) => {
         if (button.action) {
-            button.action(); // Scroll behavior
+            button.action();
         } else if (button.link) {
             if (button.link.startsWith("http")) {
-                window.open(button.link, "_blank"); // Open external links in a new tab
+                window.open(button.link, "_blank");
             } else {
-                navigate(button.link); // Internal navigation using React Router
+                navigate(button.link);
             }
         }
     };
 
-    // Define hero buttons
     const heroButtons = [
         { id: 1, label: "Projects", icon: <FaCode />, action: () => handleNavigation("projects-section") },
-        { id: 2, label: "3D Models", icon: <FaCubes />, action: () => handleNavigation("models-section") },
+        { id: 2, label: "Models", icon: <FaCubes />, action: () => handleNavigation("models-section") },
         { id: 3, label: "Design", icon: <FaPencilRuler />, link: "/" },
-        { id: 4, label: "About Me", icon: <FaHandPeace />, link: "https://twitter.com" },
+        { id: 4, label: "About", icon: <FaHandPeace />, link: "https://twitter.com" },
         { id: 5, label: "Games", icon: <FaGamepad />, link: "/games", special: true },
     ];
 
-    // Define mini buttons
     const miniButtons = [
         { id: 1, label: "Resume", icon: <FaDownload />, link: "/assets/Ella_Demarest_Resume_2025.pdf", isDownload: true },
         { id: 2, icon: <FaLinkedin />, link: "https://www.linkedin.com/in/ella-demarest-b48553189/" },
@@ -75,13 +70,11 @@ const HeroSection = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                {/* Static Background Image */}
                 <div
                     className="absolute inset-0 w-full h-full bg-cover bg-center"
                     style={{ backgroundImage: "url('/assets/images/hero-static.jpg')" }}
                 ></div>
 
-                {/* Video Background (Appears on hover) */}
                 <video
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 z-10 ${
                         isHovered ? "opacity-100" : "opacity-0"
@@ -94,18 +87,12 @@ const HeroSection = () => {
                     <source src="/assets/hero-animated.mp4" type="video/mp4" />
                 </video>
 
-                {/* Black Expanding Gradient Overlay */}
                 <div className={`absolute inset-0 pointer-events-none transition-all duration-700 z-20 ${isHovered ? "expanded-gradient" : "default-gradient"}`}></div>
 
-                {/* Left Section - Title & Mini Buttons */}
                 <div className="mini-button-container flex flex-col items-center md:items-start text-center md:text-left px-4 sm:px-8 z-30">
-                    {/* Futuristic Title */}
                     <h1 className="banner-title">Ella Demarest</h1>
-
-                    {/* Subtle Futuristic Subtext */}
                     <p className="banner-subtext">B.S. Computer Science Major, Anticipated Graduation May 2026</p>
 
-                    {/* Mini Buttons */}
                     <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-4">
                         {miniButtons.map((btn) => (
                             <a
@@ -123,23 +110,22 @@ const HeroSection = () => {
                     </div>
                 </div>
 
-                {/* Right-Side Hero Buttons */}
-                <div className="flex flex-wrap gap-4 md:mt-0 mt-6 px-4 sm:px-8 z-30 place-content-center">
+                <div className="flex flex-wrap gap-10 md:mt-0 mt-6 px-4 sm:px-8 z-30 place-content-center">
                     {heroButtons.map((btn) => (
                         <button
                             key={btn.id}
                             onClick={() => handleButtonClick(btn)}
-                            className="relative flex items-center group"
+                            className="hero-button group"
                         >
-                            <div className={`glowing-button transition-all duration-500 ease-in-out ${btn.special ? "special-glow" : ""}`}>
+                            <div className={`${btn.special ? "special-circle" : "button-circle"}`}>
                                 <span className={`button-icon ${btn.special ? "special-icon" : ""}`}>{btn.icon}</span>
-                                <span className={`button-text ${btn.special ? "special-text" : ""}`}>{btn.label}</span>
                             </div>
+                            <div className={`${btn.special ? "special-label" : "button-label"}`}>{btn.label}</div>
                         </button>
                     ))}
                 </div>
             </div>
-            <div className="w-full h-[2px] glowing-green mt-4"></div>
+            <div className="w-full h-[2px] glowing-green"></div>
         </div>
     );
 };
