@@ -9,7 +9,7 @@ import "../styles/tailwind.css"; // ✅ Import the CSS file
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const [showUpdates, setShowUpdates] = useState(true); // ✅ Control visibility
+    const [showUpdates] = useState(true); // ✅ Control visibility
 
     useEffect(() => {
         const checkIfMobile = () => {
