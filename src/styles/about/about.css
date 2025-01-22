@@ -10,7 +10,7 @@
 
   /* === 📝 ABOUT CONTENT LAYOUT (LEFT TEXT + RIGHT GRID) === */
   .about-content {
-    @apply flex flex-col md:flex-row gap-8 p-8;
+    @apply flex flex-col md:flex-row gap-8 px-8;
   }
 
   /* === 📝 LEFT SIDE: TEXT CONTENT === */

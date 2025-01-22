@@ -6,10 +6,10 @@ import "../styles/about/about.css";
 const About = () => {
   // ✅ Define Image Grid Data
   const aboutImages = [
-    { id: 1, src: "/assets/images/about-1.jpg", label: "Modeling" },
-    { id: 2, src: "/assets/images/about-2.jpg", label: "Programming" },
-    { id: 3, src: "/assets/images/about-3.jpg", label: "Game Dev" },
-    { id: 4, src: "/assets/images/about-4.jpg", label: "UI/UX" },
+    { id: 1, src: "/assets/images/caroline.png", label: "Modeling" },
+    { id: 2, src: "/assets/images/caroline.png", label: "Programming" },
+    { id: 3, src: "/assets/images/caroline.png", label: "Game Dev" },
+    { id: 4, src: "/assets/images/caroline.png", label: "UI/UX" },
   ];
 
  // ✅ Mini Labels for Project Categories
@@ -56,6 +56,12 @@ const About = () => {
             <li>3D Modeling & Animation</li>
             <li>UI/UX & Cyberpunk Aesthetics</li>
           </ul>
+                {/* ✅ Fun Fact Button */}
+      <div className="fun-fact-container">
+        <button className="fun-fact-button" onClick={handleFunFactClick}>
+          {randomIcon} Get a Random Fun Fact
+        </button>
+      </div>
         </div>
 
         {/* 🔹 Right: Image Grid */}
@@ -67,13 +73,6 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* ✅ Fun Fact Button */}
-      <div className="fun-fact-container">
-        <button className="fun-fact-button" onClick={handleFunFactClick}>
-          {randomIcon} Get a Random Fun Fact
-        </button>
       </div>
 
       {/* ✅ Centered Section: Image on Left, Text on Right */}
