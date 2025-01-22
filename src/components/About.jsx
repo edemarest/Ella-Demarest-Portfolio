@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FaUser, FaQuoteLeft, FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaUser, FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import "../styles/about/about.css";
 
