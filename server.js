@@ -6,10 +6,12 @@ const { OpenAI } = require("openai");
 const app = express();
 const PORT = process.env.PORT || 10000; // ✅ Render dynamically assigns the PORT
 
+
 app.use(cors({
     origin: "https://ellademarestportfolio.netlify.app", // ✅ Allow only Netlify frontend
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"]
+    methods: ["GET", "POST", "OPTIONS"], // ✅ Allow OPTIONS for preflight
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
 }));
 app.use(express.json()); // ✅ Parse JSON request body
 
