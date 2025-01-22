@@ -2,8 +2,9 @@ require("dotenv").config();
 const { OpenAI } = require("openai");
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY, // Netlify handles ENV variables differently
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
 });
+console.log("Loaded API Key:", process.env.REACT_APP_OPENAI_API_KEY ? "✔ Loaded" : "❌ Not Found");
 
 const findBlockingMove = (board, playerSymbol) => {
     const winPatterns = [

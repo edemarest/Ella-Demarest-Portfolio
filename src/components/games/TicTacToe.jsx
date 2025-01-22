@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSnowflake, faRedo, faGem } from "@fortawesome/free-solid-svg-icons";
 import "../../styles/projects/project-card.css";
 import "../../styles/games/tictactoe.css";
-import { checkWinner, botMove } from "../../scripts/tictactoe";
+import { checkWinner } from "../../scripts/tictactoe";
 
 const TicTacToe = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -12,7 +12,7 @@ const TicTacToe = () => {
   const [turn, setTurn] = useState(0);
   const [playerSymbol, setPlayerSymbol] = useState("X"); // ✅ Toggle Player X/O
 
-  // ✅ Memoized clearBoard function to prevent unnecessary re-renders
+  // ✅ Clear Board Function
   const clearBoard = useCallback(() => {
     console.log("[RESET] Board Cleared.");
     setBoard(Array(9).fill(null));
@@ -21,66 +21,83 @@ const TicTacToe = () => {
     setTurn(0);
   }, [playerSymbol]);
 
-  // ✅ Memoized handleMove function with `useCallback`
+  // ✅ Bot Move Function (Calls Render Backend)
+  const fetchBotMove = async (currentBoard, botSymbol, difficulty, currentTurn) => {
+    try {
+      const response = await fetch("https://tictactoe-ai.onrender.com/api/move", { // ✅ Render backend URL
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ board: currentBoard, botSymbol, difficulty }),
+      });
+
+      const data = await response.json();
+      console.log(`[DEBUG] AI Move Received: ${data.move}`);
+      return data.move ?? -1;
+    } catch (error) {
+      console.error("[ERROR] AI move error:", error);
+      return -1;
+    }
+  };
+
+  // ✅ Handle Move Function
   const handleMove = useCallback(
     (index, player) => {
       if (!board[index] && !winner) {
         setBoard((prevBoard) => {
           const newBoard = [...prevBoard];
           newBoard[index] = player;
+
+          const result = checkWinner(newBoard);
+          if (result) {
+            console.log(`[INFO] Winner Detected: ${result.winner}`);
+            setWinner(result);
+          }
+
           return newBoard;
         });
 
         setTurn((prevTurn) => prevTurn + 1);
         console.log(`[MOVE] Player ${player} moved to index ${index}`);
 
-        const result = checkWinner([...board, (board[index] = player)]);
-        if (result) {
-          console.log(`[INFO] Winner Detected: ${result.winner}`);
-          setWinner(result);
-          return;
-        }
-
-        // ✅ Use functional update to avoid `isBotTurn` dependency issue
-        setIsBotTurn((prevIsBotTurn) => !prevIsBotTurn);
+        setIsBotTurn(true); // ✅ Hand over turn to bot
       }
     },
     [board, winner]
   );
 
-  // ✅ Effect for bot move, now using `handleMove` safely
+  // ✅ Effect for bot move
   useEffect(() => {
     if (!isBotTurn || winner) return;
 
-    setTimeout(async () => {
+    const makeBotMove = async () => {
       const botSymbol = playerSymbol === "X" ? "O" : "X";
-      const botIndex = await botMove(board, botSymbol, "hard", turn);
+      const botIndex = await fetchBotMove(board, botSymbol, "hard", turn);
       if (botIndex !== -1) {
         handleMove(botIndex, botSymbol);
       }
-    }, 1500);
+      setIsBotTurn(false);
+    };
+
+    setTimeout(makeBotMove, 1500);
   }, [isBotTurn, winner, board, playerSymbol, turn, handleMove]);
 
-  // ✅ Effect for checking winner, including `clearBoard` as a dependency
+  // ✅ Effect for checking winner
   useEffect(() => {
     const result = checkWinner(board);
     if (result) {
       console.log(`[INFO] Game Over: ${result.winner} wins!`);
       setWinner(result);
-      setTimeout(clearBoard, 2000); // ✅ Uses memoized clearBoard
-      return;
-    }
-    if (board.every((cell) => cell !== null)) {
+      setTimeout(clearBoard, 2000);
+    } else if (board.every((cell) => cell !== null)) {
       console.log("[INFO] Game Over: Draw!");
       setWinner({ winner: "Draw" });
-      setTimeout(clearBoard, 2000); // ✅ Uses memoized clearBoard
+      setTimeout(clearBoard, 2000);
     }
   }, [board, clearBoard]);
 
   const handleSquareClick = (index) => {
     if (!isBotTurn && !board[index] && !winner) {
       handleMove(index, playerSymbol);
-      setIsBotTurn(true);
     }
   };
 
@@ -138,7 +155,7 @@ const TicTacToe = () => {
         ))}
       </div>
 
-      {/* Button Container (Aligns Buttons to the Right) */}
+      {/* Button Container */}
       <div className="button-container">
         {/* Toggle Player Symbol Button */}
         <button className="circle-button" onClick={togglePlayerSymbol}>
