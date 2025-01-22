@@ -7,9 +7,19 @@ const app = express();
 const PORT = process.env.PORT || 10000; // ✅ Render dynamically assigns the PORT
 
 app.use((req, res, next) => {
-    console.log(`[DEBUG] Request: ${req.method} ${req.url}`);
+    res.header("Access-Control-Allow-Origin", "https://ellademarestportfolio.netlify.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
+
+    // ✅ Handle OPTIONS requests immediately
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(204);
+    }
+    
     next();
 });
+
 
 // ✅ Start Server
 app.listen(PORT, () => {
