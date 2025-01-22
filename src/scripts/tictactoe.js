@@ -1,3 +1,5 @@
+const API_URL = "https://ella-demarest-portfolio.onrender.com/api/move"; 
+
 export const checkWinner = (board) => {
     const winPatterns = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], 
@@ -14,25 +16,29 @@ export const checkWinner = (board) => {
     return null;
 };
 
-// Calls the backend AI server at port 5050
 export const botMove = async (board, botSymbol, difficulty, turn) => {
     console.log(`[DEBUG] Turn ${turn} | Sending AI move request`);
 
     try {
-        const response = await fetch("https://ella-demarest-portfolio.onrender.com/api/move", { // Use Render URL
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ board, botSymbol, difficulty })
         });
 
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+
         const data = await response.json();
-        console.log(`[DEBUG] AI move received: ${data.move}`);
-        return data.move;
+        console.log(`[DEBUG] AI Move Received: ${data.move}`);
+        return data.move ?? -1;
     } catch (error) {
         console.error("[ERROR] AI move error:", error);
-        return -1; 
+        return -1; // Fail gracefully
     }
 };
+
 // Handles difficulty switch
 export const resetGame = (setBoard, setWinner, setIsBotTurn, setTurn, newDifficulty) => {
     console.log(`[DEBUG] Difficulty changed to: ${newDifficulty} | Resetting game...`);

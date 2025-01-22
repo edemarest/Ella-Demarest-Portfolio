@@ -1,30 +1,42 @@
 [
     {
-      "url": "/assets/images/flood.png",
+      "url": "/assets/images/titan.png",
       "title": "Character Sketch"
     },
     {
-      "url": "/assets/artwork/painting1.jpg",
+      "url": "/assets/images/caroline.png",
       "title": "Digital Painting"
     },
     {
-      "url": "/assets/artwork/environment1.jpg",
+      "url": "/assets/images/money.png",
       "title": "Environment Concept"
     },
     {
-      "url": "/assets/artwork/portrait1.jpg",
+      "url": "/assets/images/gibdo.png",
       "title": "Portrait Study"
     },
     {
-      "url": "/assets/artwork/portrait1.jpg",
+      "url": "/assets/images/eva.png",
       "title": "Portrait Study"
     },
     {
-      "url": "/assets/artwork/portrait1.jpg",
+      "url": "/assets/images/suits.png",
       "title": "Portrait Study"
     },
     {
-      "url": "/assets/artwork/portrait1.jpg",
+      "url": "/assets/images/dabi.png",
+      "title": "Portrait Study"
+    },
+    {
+      "url": "/assets/images/ui.png",
+      "title": "Portrait Study"
+    },
+    {
+      "url": "/assets/images/hawks.png",
+      "title": "Portrait Study"
+    },
+    {
+      "url": "/assets/images/nomu.png",
       "title": "Portrait Study"
     }
   ]
