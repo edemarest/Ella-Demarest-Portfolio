@@ -15,7 +15,7 @@ const About = () => {
  // ✅ Mini Labels for Project Categories
     const miniButtons = [
       { id: 1, label: "Fitness", icon: <FaDumbbell /> },
-      { id: 2, label: "Video Games", icon: <FaGamepad /> },
+      { id: 2, label: "League of Legends", icon: <FaGamepad /> },
       { id: 3, label: "Memes", icon: <FaLaughSquint /> },
   ];
 
