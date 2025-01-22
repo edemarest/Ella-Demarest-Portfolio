@@ -1,4 +1,4 @@
-fetch("https://tictactoe-ai.onrender.com/api/move", {
+fetch("https://ella-demarest-portfolio.onrender.com/api/move", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ board: [null, "X", null, null, "O", null, null, null, null], botSymbol: "O", difficulty: "hard" })

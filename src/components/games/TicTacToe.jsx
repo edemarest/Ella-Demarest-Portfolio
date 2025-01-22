@@ -24,7 +24,7 @@ const TicTacToe = () => {
   // ✅ Bot Move Function (Calls Render Backend)
   const fetchBotMove = async (currentBoard, botSymbol, difficulty, currentTurn) => {
     try {
-      const response = await fetch("https://tictactoe-ai.onrender.com/api/move", { // ✅ Render backend URL
+      const response = await fetch("https://ella-demarest-portfolio.onrender.com/api/move", { // ✅ Render backend URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ board: currentBoard, botSymbol, difficulty }),

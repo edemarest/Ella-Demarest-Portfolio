@@ -26,18 +26,22 @@ export const botMove = async (board, botSymbol, difficulty, turn) => {
             body: JSON.stringify({ board, botSymbol, difficulty })
         });
 
+        console.log(`[DEBUG] Raw Response:`, response);
+
         if (!response.ok) {
             throw new Error(`Server responded with status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log(`[DEBUG] AI Move Received: ${data.move}`);
+        console.log(`[DEBUG] AI Move Received:`, data);
+
         return data.move ?? -1;
     } catch (error) {
         console.error("[ERROR] AI move error:", error);
-        return -1; // Fail gracefully
+        return -1;
     }
 };
+
 
 // Handles difficulty switch
 export const resetGame = (setBoard, setWinner, setIsBotTurn, setTurn, newDifficulty) => {
