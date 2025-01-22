@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaUser, FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown, FaWeight, FaGamepad, FaLaughSquint, FaDumbbell } from "react-icons/fa";
+import {FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown, FaGamepad, FaLaughSquint, FaDumbbell, FaHandPeace } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import "../styles/about/about.css";
 
@@ -33,7 +33,7 @@ const About = () => {
     <div className="about-container pl-8 pt-8">
       {/* ✅ Section Header */}
       <SectionHeader
-        icon={<FaUser />}
+        icon={<FaHandPeace />}
         title="About Me"
         titleColor="text-pinkPurple"
         miniButtons={miniButtons}
