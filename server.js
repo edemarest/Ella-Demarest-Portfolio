@@ -57,8 +57,13 @@ const constructAsciiBoard = (board) => `
     ${board[6] ?? "6"} | ${board[7] ?? "7"} | ${board[8] ?? "8"}
 `;
 
-// ✅ AI Move Route
 app.post("/api/move", async (req, res) => {
+    // 🔹 Force CORS Headers on the Actual Response
+    res.setHeader("Access-Control-Allow-Origin", "https://ellademarestportfolio.netlify.app");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+
     try {
         console.log("[DEBUG] Request received:", req.body);
 
@@ -69,60 +74,22 @@ app.post("/api/move", async (req, res) => {
 
         const playerSymbol = botSymbol === "X" ? "O" : "X";
         const emptyIndices = board.map((val, idx) => (val === null ? idx : null)).filter(val => val !== null);
-
         if (emptyIndices.length === 0) return res.json({ move: -1 });
 
-        // ✅ Try to block opponent
-        if (difficulty === "hard" || difficulty === "medium") {
-            const blockMove = findBlockingMove(board, playerSymbol);
-            if (blockMove !== null) {
-                console.log(`[BOT MOVE] Blocking at index ${blockMove}`);
-                return res.json({ move: blockMove });
-            }
-        }
+        const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-        // ✅ Easy mode: Random move
-        if (difficulty === "easy") {
-            const randomMove = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
-            console.log(`[BOT MOVE] Easy mode, choosing index ${randomMove}`);
-            return res.json({ move: randomMove });
-        }
+        // ✅ AI Move Calculation (Simplified for Debugging)
+        const randomMove = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+        console.log(`[BOT MOVE] Choosing index ${randomMove}`);
 
-        // ✅ Construct AI prompt
-        const asciiBoard = constructAsciiBoard(board);
-        const prompt = `
-You are an **advanced Tic-Tac-Toe AI** playing as '${botSymbol}'. Here is the **current board state**:
+        return res.json({ move: randomMove });
 
-${asciiBoard}
-
-### **Rules for Making a Move**
-1️⃣ **If you have a move that wins the game, take it now.**
-2️⃣ **If the opponent '${playerSymbol}' is about to win, block them.**
-3️⃣ **Otherwise, choose the most strategic move.**
-4️⃣ **Return only the number (0-8) of your move. No explanations.**
-`;
-
-        // ✅ AI Call
-        const response = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [{ role: "system", content: prompt }]
-        });
-
-        const rawResponse = response.choices[0].message.content.trim();
-        const moveMatch = rawResponse.match(/\b[0-8]\b/);
-        const aiMove = moveMatch ? parseInt(moveMatch[0], 10) : null;
-
-        console.log(`[BOT MOVE] AI Chose: ${aiMove}`);
-
-        return res.json({ move: aiMove ?? emptyIndices[0] }); // Default to first empty cell if AI fails
     } catch (error) {
         console.error("[ERROR] AI Move Error:", error);
-        return res.status(500).json({
-            error: "AI API failed",
-            move: emptyIndices && emptyIndices.length ? emptyIndices[0] : -1
-        });
+        return res.status(500).json({ error: "AI API failed", move: -1 });
     }
 });
+
 
 // ✅ Function to find a blocking move
 const findBlockingMove = (board, playerSymbol) => {
