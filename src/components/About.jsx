@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaUser, FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import { FaUser, FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown, FaWeight, FaGamepad, FaLaughSquint, FaDumbbell } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import "../styles/about/about.css";
 
@@ -10,6 +10,13 @@ const About = () => {
     { id: 2, src: "/assets/images/about-2.jpg", label: "Programming" },
     { id: 3, src: "/assets/images/about-3.jpg", label: "Game Dev" },
     { id: 4, src: "/assets/images/about-4.jpg", label: "UI/UX" },
+  ];
+
+ // ✅ Mini Labels for Project Categories
+    const miniButtons = [
+      { id: 1, label: "Fitness", icon: <FaDumbbell /> },
+      { id: 2, label: "Video Games", icon: <FaGamepad /> },
+      { id: 3, label: "Memes", icon: <FaLaughSquint /> },
   ];
 
   // ✅ List of Fun Fact Icons (Randomized for button)
@@ -29,9 +36,8 @@ const About = () => {
         icon={<FaUser />}
         title="About Me"
         titleColor="text-pinkPurple"
-        miniButtons={[]}
-        buttonColor="greenLabel"
-        description="I have a passion for coding, game development, and UI/UX design. Here’s a little more about my background and expertise."
+        miniButtons={miniButtons}
+        buttonColor="pinkLabel"
       />
 
       {/* ✅ Two-Column Layout */}

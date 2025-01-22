@@ -4,10 +4,12 @@ import ProjectsGrid from "../components/ProjectsGrid";
 import Models from "../components/Models.jsx";
 import ArtGallery from "../components/ArtGallery.jsx";
 import About from "../components/About.jsx";
+import SiteUpdates from "../components/SiteUpdates.jsx"; // ✅ Import Site Updates
 import "../styles/tailwind.css"; // ✅ Import the CSS file
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [showUpdates, setShowUpdates] = useState(true); // ✅ Control visibility
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -35,6 +37,9 @@ const Home = () => {
             {/* ✅ Hero Section (No Background) */}
             <HeroSection />
 
+            {/* ✅ Site Updates (Only Show if Not Dismissed) */}
+            {showUpdates && <SiteUpdates />}
+
             {/* ✅ Content Sections */}
             <div id="projects-section">
                 <ProjectsGrid />
@@ -45,7 +50,7 @@ const Home = () => {
             <div id="art-section">
                 <ArtGallery />
             </div>
-            <div id="art-section">
+            <div id="about-section">
                 <About />
             </div>
         </div>
