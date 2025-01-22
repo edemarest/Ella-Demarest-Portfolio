@@ -19,7 +19,7 @@ export const botMove = async (board, botSymbol, difficulty, turn) => {
     console.log(`[DEBUG] Turn ${turn} | Sending AI move request`);
 
     try {
-        const response = await fetch("https://tictactoe-ai.onrender.com/api/move", { // Use Render URL
+        const response = await fetch("https://ella-demarest-portfolio.onrender.com/api/move", { // Use Render URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ board, botSymbol, difficulty })
