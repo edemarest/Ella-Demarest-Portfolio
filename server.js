@@ -6,6 +6,9 @@ const { OpenAI } = require("openai");
 const app = express();
 const PORT = process.env.PORT || 10000; // ✅ Render dynamically assigns the PORT
 
+app.use(express.json()); // ✅ Ensure JSON body is parsed correctly
+
+// ✅ Global CORS Middleware (Ensures headers are set on all responses)
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://ellademarestportfolio.netlify.app");
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -20,47 +23,29 @@ app.use((req, res, next) => {
     next();
 });
 
-
 // ✅ Start Server
 app.listen(PORT, () => {
     console.log(`✅ Server running on port ${PORT}`);
 });
 
+// ✅ Root Route (Check If Server is Running)
+app.get("/", (req, res) => {
+    res.send("✅ Tic-Tac-Toe AI Server is running!");
+});
+
+// ✅ Explicitly Reject GET Requests to /api/move
 app.get("/api/move", (req, res) => {
     res.status(405).send("Method Not Allowed. Use POST instead.");
 });
 
-
+// ✅ Initialize OpenAI Client
 if (!process.env.OPENAI_API_KEY) {
     console.error("[ERROR] OPENAI_API_KEY is missing!");
-    return res.status(500).json({ error: "Missing OpenAI API Key" });
+    process.exit(1); // ✅ Stop server if API key is missing
 }
 
-
-app.use(cors({
-    origin: "https://ellademarestportfolio.netlify.app",
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-}));
-
-// ✅ Handle CORS preflight manually
-app.options("*", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://ellademarestportfolio.netlify.app");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    return res.sendStatus(204);
-});
-
-
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY, // ✅ Use correct variable (No `REACT_APP_` in backend)
-});
-
-// ✅ Root Route (Check If Server is Running)
-app.get("/", (req, res) => {
-    res.send("✅ Tic-Tac-Toe AI Server is running!");
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 // ✅ Construct ASCII board for OpenAI
@@ -132,10 +117,12 @@ ${asciiBoard}
         return res.json({ move: aiMove ?? emptyIndices[0] }); // Default to first empty cell if AI fails
     } catch (error) {
         console.error("[ERROR] AI Move Error:", error);
-        return res.status(500).json({ error: "AI API failed", move: emptyIndices[0] });
+        return res.status(500).json({
+            error: "AI API failed",
+            move: emptyIndices && emptyIndices.length ? emptyIndices[0] : -1
+        });
     }
 });
-
 
 // ✅ Function to find a blocking move
 const findBlockingMove = (board, playerSymbol) => {
