@@ -29,12 +29,8 @@
 
   /* 🖼 RIGHT SECTION: IMAGE GRID (MATCHES LEFT SECTION HEIGHT) */
   .about-image-grid {
-    @apply grid grid-cols-2 gap-4 w-full md:w-1/2;
+    @apply grid md:grid-cols-2 sm:grid-cols-1 gap-4 w-full md:w-1/2;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: stretch;
-    height: 100%; /* Matches the left section */
   }
 
   /* 📌 IMAGE CARD */

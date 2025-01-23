@@ -4,6 +4,7 @@ import { FaGamepad} from "react-icons/fa";
 import { SiOpenai, SiRender } from "react-icons/si";
 import TicTacToe from "../components/games/TicTacToe.jsx";
 import ComingSoon from "../components/games/ComingSoon.jsx";
+import Footer from "../components/Footer.jsx";
 import "../styles/games/games-grid.css"; // Uses existing game styles
 import SectionHeader from "../components/SectionHeader";
 
@@ -33,6 +34,7 @@ const GamesPage = () => {
           <ComingSoon />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
