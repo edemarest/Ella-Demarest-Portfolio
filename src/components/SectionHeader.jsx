@@ -20,8 +20,8 @@ const SectionHeader = ({ icon, title, titleColor, miniButtons, buttonColor, desc
         ))}
       </div>
 
-      {/* ✅ Description */}
-      <p className="section-body-text">{description}</p>
+      {/* ✅ Render Description Only If Provided */}
+      {description && <p className="section-body-text">{description}</p>}
     </div>
   );
 };

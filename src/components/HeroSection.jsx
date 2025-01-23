@@ -51,8 +51,8 @@ const HeroSection = () => {
     const heroButtons = [
         { id: 1, label: "Projects", icon: <FaCode />, action: () => handleNavigation("projects-section") },
         { id: 2, label: "Models", icon: <FaCubes />, action: () => handleNavigation("models-section") },
-        { id: 3, label: "Design", icon: <FaPencilRuler />, link: "/" },
-        { id: 4, label: "About", icon: <FaHandPeace />, link: "https://twitter.com" },
+        { id: 3, label: "Design", icon: <FaPencilRuler />, action: () => handleNavigation("design-section") },
+        { id: 4, label: "About", icon: <FaHandPeace />, action: () => handleNavigation("about-section") },
         { id: 5, label: "Games", icon: <FaGamepad />, link: "/games", special: true },
     ];
 

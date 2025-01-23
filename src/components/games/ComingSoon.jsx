@@ -4,7 +4,7 @@ import "../../styles/games/tictactoe.css"; // Using TicTacToe styles for consist
 
 const ComingSoon = () => {
   return (
-    <div className="project-card coming-soon-container">
+    <div className="coming-soon-container">
       <FaHourglassHalf className="coming-soon-icon" />
       <p className="coming-soon-text">COMING SOON...</p>
     </div>

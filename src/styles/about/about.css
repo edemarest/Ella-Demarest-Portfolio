@@ -3,80 +3,115 @@
 @tailwind utilities;
 
 @layer components {
-  /* === 📌 ABOUT CONTAINER === */
   .about-container {
-    @apply mx-auto;
+    @apply mx-auto sm:pl-0 sm:ml-0;
   }
 
-  /* === 📝 ABOUT CONTENT LAYOUT (LEFT TEXT + RIGHT GRID) === */
+  /* 📜 ABOUT CONTENT LAYOUT */
   .about-content {
     @apply flex flex-col md:flex-row gap-8 px-8;
   }
 
-  /* === 📝 LEFT SIDE: TEXT CONTENT === */
+  /* 📝 LEFT SECTION: TEXT */
   .about-text {
     @apply w-full md:w-1/2 text-base;
     font-family: "Rajdhani", sans-serif;
   }
 
   .about-subheading {
-    @apply text-neonCyan font-bold text-xl mb-2;
+    @apply text-pinkPurple font-bold text-xl mb-2;
   }
 
   .about-list {
-    @apply list-disc list-inside text-cyberTextGrey mt-2;
+    @apply list-disc list-inside mt-2 text-base;
     font-family: "Rajdhani", sans-serif;
   }
 
-  /* === 🖼 RIGHT SIDE: IMAGE GRID === */
+  /* 🖼 RIGHT SECTION: IMAGE GRID (MATCHES LEFT SECTION HEIGHT) */
   .about-image-grid {
     @apply grid grid-cols-2 gap-4 w-full md:w-1/2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: stretch;
+    height: 100%; /* Matches the left section */
   }
 
-  /* === 🌟 INDIVIDUAL IMAGE CARDS === */
+  /* 📌 IMAGE CARD */
   .about-image-card {
-    @apply bg-neonCyan p-2 rounded-md relative shadow-lg;
+    @apply bg-panelGradient p-2 rounded-md relative shadow-lg;
+    box-shadow: 0px 0px 5px rgba(255, 0, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    overflow: hidden;
   }
 
-  /* === 🖼 IMAGE === */
+  .about-image-card:hover {
+    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.8);
+    transform: scale(1.01);
+  }
+
+  /* 🖼 IMAGE: Keeps Aspect Ratio, Crops Sides */
   .about-image {
-    @apply w-full h-auto rounded-md;
+    width: 100%;
+    height: calc(100% - 2rem);
+    object-fit: cover; /* Prevents stretching, crops sides */
+    border-radius: 8px;
   }
 
-  /* === 🔹 IMAGE LABEL BELOW === */
+  /* 🏷 IMAGE LABEL */
   .about-image-label {
-    @apply text-darkGrey font-bold text-center mt-2;
+    @apply text-white font-bold text-center mt-2;
     font-family: "Orbitron", sans-serif;
   }
 
-  /* === 🎉 RANDOM FUN FACT BUTTON === */
+  /* === 🎭 FUN FACT SECTION === */
   .fun-fact-container {
-    @apply flex justify-center mt-6;
+    @apply flex flex-col gap-4 mt-8;
   }
 
-  .fun-fact-button {
-    @apply flex items-center gap-2 bg-neonCyan text-darkGrey font-bold px-6 py-3 rounded-full border-2 border-neonCyan transition-all duration-300;
+  /* 🎯 Clickable Text */
+  .fun-fact-text {
+    @apply flex items-center gap-2 text-pinkPurple font-bold cursor-pointer transition-all duration-300;
     font-family: "Orbitron", sans-serif;
   }
 
-  .fun-fact-button:hover {
-    box-shadow: 0px 0px 20px #00f5ff;
+  .fun-fact-text:hover {
+    text-shadow: 0px 0px 10px #ff00ff;
     transform: scale(1.05);
   }
 
-  /* === 🎭 CENTERED FEATURED SECTION === */
-  .about-centered-section {
-    @apply flex flex-col md:flex-row items-center gap-8 mt-12 p-8 bg-panelGradient rounded-md;
+  .fun-fact-icon {
+    @apply text-pinkPurple text-lg;
+    transition: transform 0.3s ease-in-out;
   }
 
-  /* === 🖼 LEFT: FEATURED IMAGE === */
-  .about-feature-image {
-    @apply w-full md:w-1/3 rounded-md;
+  .fun-fact-text:hover .fun-fact-icon {
+    transform: rotate(180deg);
   }
 
-  /* === 📜 RIGHT: FEATURED TEXT === */
-  .about-feature-text {
-    @apply w-full md:w-2/3;
+  /* 🎉 Fun Fact Display (Now with Animated Box Shadow) */
+  .fun-fact-display {
+    @apply flex items-center bg-panelGradient px-4 py-1 rounded-md;
+    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.6); /* ✅ Subtle Pink Shadow */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  /* 🖱️ Expands Slightly on Hover */
+  .fun-fact-display:hover {
+    box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+    transform: scale(1.01);
+  }
+
+  .fun-fact-image {
+    @apply w-16 h-16 rounded-sm;
+  }
+
+  .fun-fact-description {
+    @apply ml-4 text-cyberTextGrey text-lg;
     font-family: "Rajdhani", sans-serif;
   }
 }

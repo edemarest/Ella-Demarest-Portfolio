@@ -1,26 +1,37 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBell } from "react-icons/fa";
 import "../styles/site-updates.css"; // ✅ Import the CSS file
 
 const SiteUpdates = () => {
     const [isVisible, setIsVisible] = useState(true);
+    const [updateData, setUpdateData] = useState(null);
 
-    if (!isVisible) return null; // ✅ Prevent rendering when dismissed
+    // ✅ Load JSON data
+    useEffect(() => {
+        fetch("/assets/data/site-updates.json") // Adjust the path if needed
+            .then((response) => response.json())
+            .then((data) => setUpdateData(data))
+            .catch((error) => console.error("❌ Error loading site updates:", error));
+    }, []);
+
+    if (!isVisible || !updateData) return null; // ✅ Prevent rendering when dismissed or data missing
 
     return (
-        <div className="site-updates-container">
+        <div className="site-updates-container" onClick={() => window.location.href = updateData.link}>
             {/* 🔔 Header Section */}
             <div className="site-updates-header">
                 <FaBell className="site-updates-icon" />
-                <h3 className="site-updates-title">Games Page!</h3>
-                <button className="dismiss-btn" onClick={() => setIsVisible(false)}>✕</button>
+                <h3 className="site-updates-title">{updateData.title}</h3>
+                <button className="dismiss-btn" onClick={(e) => { 
+                    e.stopPropagation(); // ✅ Prevents click from triggering navigation
+                    setIsVisible(false); 
+                }}>
+                    ✕
+                </button>
             </div>
 
             {/* 📌 Body Text */}
-            <p className="site-updates-body">
-                Exciting changes are coming! Check back soon for new features, performance improvements, and updated visuals.
-            </p>
+            <p className="site-updates-body">{updateData.message}</p>
         </div>
     );
 };

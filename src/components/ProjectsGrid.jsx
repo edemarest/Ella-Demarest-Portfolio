@@ -51,14 +51,14 @@ const ProjectsGrid = () => {
   ];
 
   return (
-    <div className="projects-container pl-8 pt-8">
+    <div className="projects-container md:pl-8 sm:pl-0 pt-8">
       <SectionHeader
         icon={<FaCode />}
         title="Projects"
         titleColor="text-neonCyan"
         miniButtons={miniButtons}
         buttonColor="greenLabel"
-        description="I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, environment assets, vehicles, and more."
+        description="Throughout the years I have worked on dozens of programming projects for school, work, and myself. I have a strong design background and extensive front end experience, but I also love the problem solving and data science knowledge that comes with developing the back end. Though I cannot make some of my best projects public since they are for work, here are a few that I can share. Lately I have been developing in React and am hoping to add more projects soon!"
       />
 
       {/* Dynamic Grid Layout */}

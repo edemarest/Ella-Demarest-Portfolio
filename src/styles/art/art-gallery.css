@@ -5,7 +5,7 @@
 @layer components {
   /* === 🎨 ART CONTAINER === */
   .art-gallery-container {
-    @apply mx-auto text-center py-10 sm:px-10;
+    @apply mx-auto text-center py-10 sm:px-0;
   }
 
   .art-gallery-header {

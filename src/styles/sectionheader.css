@@ -74,6 +74,5 @@
   .section-body-text {
     @apply text-base py-5 text-left;
     font-family: "Rajdhani", sans-serif;
-    max-width: 750px;
   }
 }

@@ -16,7 +16,7 @@
 
     /* === 🖼 PROJECTS GRID (DYNAMIC) === */
     .projects-grid {
-        @apply grid gap-4 p-0 sm:px-3 md:px-5 transition-all;
+        @apply grid gap-4 p-0 sm:px-1 sm:mx-auto md:px-5 transition-all;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         align-items: center;
     }
@@ -24,13 +24,16 @@
     
     /* Ensure only the expanded project stretches, others stay unchanged */
     .project-card.expanded {
-        grid-column: 1 / -1; /* Take up full width row without affecting siblings */
+        @apply sm:w-[95%];
+        grid-column: 1 / -1;
         width: 100%;
     }
     
     .project-card:not(.expanded) {
+        @apply mx-auto;
         max-width: 450px; /* Ensures non-expanded projects remain the same */
         height: 500px; /* Ensures non-expanded projects remain the same */
+
     }    
 
     /* === 📦 PROJECT CARD (Default Square) === */
