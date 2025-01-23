@@ -44,7 +44,7 @@
 
     /* 📝 Body Text */
     .site-updates-body {
-        @apply text-cyberTextGrey text-base leading-relaxed;
+        @apply text-cyberTextGrey text-lg leading-relaxed;
         font-family: "Rajdhani", sans-serif;
     }
 }
