@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaBell } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ Import React Router navigation
 import "../styles/site-updates.css"; // ✅ Import the CSS file
 
 const SiteUpdates = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [updateData, setUpdateData] = useState(null);
+    const navigate = useNavigate(); // ✅ Use React Router for navigation
 
     // ✅ Load JSON data
     useEffect(() => {
@@ -17,7 +19,7 @@ const SiteUpdates = () => {
     if (!isVisible || !updateData) return null; // ✅ Prevent rendering when dismissed or data missing
 
     return (
-        <div className="site-updates-container" onClick={() => window.location.href = "/games"}>
+        <div className="site-updates-container" onClick={() => navigate("/games")}> {/* ✅ Use navigate() */}
             {/* 🔔 Header Section */}
             <div className="site-updates-header">
                 <FaBell className="site-updates-icon" />
