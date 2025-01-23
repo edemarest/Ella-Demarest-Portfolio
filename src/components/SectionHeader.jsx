@@ -13,10 +13,10 @@ const SectionHeader = ({ icon, title, titleColor, miniButtons, buttonColor, desc
       {/* ✅ Mini Buttons (Ensures They Are Properly Aligned) */}
       <div className="mini-buttons-container">
         {miniButtons.map((btn) => (
-          <button key={btn.id} className={`mini-glowing-label ${buttonColor}`}>
+          <div key={btn.id} className={`mini-glowing-label ${buttonColor}`}>
             <span className="mini-label-icon">{btn.icon}</span>
             {btn.label}
-          </button>
+          </div>
         ))}
       </div>
 

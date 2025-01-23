@@ -53,23 +53,6 @@
     background: rgba(171, 0, 244, 0.35);
   }
 
-  /* === ✨ Hover Glow Effect (Based on Button Color) === */
-  .greenLabel:hover {
-    box-shadow: 0px 0px 15px 3px rgba(54, 224, 210, 0.4);
-  }
-
-  .blueLabel:hover {
-    box-shadow: 0px 0px 15px 3px rgba(54, 173, 224, 0.4);
-  }
-
-  .purpleLabel:hover {
-    box-shadow: 0px 0px 15px 3px rgba(60, 54, 224, 0.4);
-  }
-
-  .pinkLabel:hover {
-    box-shadow: 0px 0px 15px 3px rgba(169, 3, 252, 0.4);
-  }
-
   /* ✅ Properly Aligned Description */
   .section-body-text {
     @apply text-base py-5 text-left;

@@ -6,7 +6,7 @@ import "../styles/about/about.css";
 const About = () => {
   // ✅ Image Grid Data
   const aboutImages = [
-    { id: 1, src: "/assets/images/me.jpg", label: "Me" },
+    { id: 1, src: "/assets/images/me.png", label: "Me" },
     { id: 2, src: "/assets/images/ember.jpg", label: "Ember" },
     { id: 3, src: "/assets/images/walter.jpg", label: "Walter" },
     { id: 4, src: "/assets/images/misty-and-sandy.jpg", label: "Misty & Sandy" },
