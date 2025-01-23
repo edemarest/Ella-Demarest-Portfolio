@@ -17,7 +17,7 @@ const SiteUpdates = () => {
     if (!isVisible || !updateData) return null; // ✅ Prevent rendering when dismissed or data missing
 
     return (
-        <div className="site-updates-container" onClick={() => window.location.href = updateData.link}>
+        <div className="site-updates-container" onClick={() => window.location.href = "/games"}>
             {/* 🔔 Header Section */}
             <div className="site-updates-header">
                 <FaBell className="site-updates-icon" />
