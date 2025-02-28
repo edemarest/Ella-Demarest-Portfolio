@@ -30,7 +30,7 @@
     {
       "id": 3,
       "title": "Robux Calculator",
-      "subheading": "Robux to Currency Conversion & Store Earnings",
+      "subheading": "Robux to Currency Conversion & Earnings",
       "image": "/assets/images/robux_calculator.png",
       "bullets": ["DevEx Calculator", "Marketplace Fee Adjustments", "Currency Conversion"],
       "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>Developers, contractors, and Robux purchasers can use this tool to calculate costs and earnings.</p><ul><li>Calculates DevEx earnings from Robux to currency (local tax rate can be applied).</li><li>Converts currency value to Robux and vice versa and applies the package discounts Roblox offers for larger bundles.</li><li>Calculates Robux earnings with marketplace fee applied.</li><li>Determines price needed to earn a specified Robux amount given the marketplace.</li></ul></div>",
