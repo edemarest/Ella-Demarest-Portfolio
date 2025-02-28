@@ -1,6 +1,20 @@
 [
     {
       "id": 1,
+      "title": "Pokémon Sleep Research Community",
+      "subheading": "Site for Pokémon Sleep Players",
+      "image": "/assets/images/psc.png",
+      "bullets": ["React & Firebase", "Secure Friend Code Sharing", "Blog-Style Posting"],
+      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A community forum and code-sharing platform built with React and Firebase. It allows <a href='https://pokemon-sleep-research-community.com' target='_blank'>Pokémon Sleep</a> players to easily find, copy, and share friend codes while keeping their codes hidden from spammers and trolls—unlike Reddit and other open-sharing sites.</p><ul><li>Users can choose to make their codes visible only to registered members, providing extra privacy.</li><li>The platform also enables users to create entries where they can ask questions, showcase game achievements, and more.</li><li>Posts can include attached images and tags, making it easier to organize and find relevant discussions.</li><li>Users can like, comment, and filter posts by specific tags to refine their browsing experience.</li></ul></div>",
+      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Setting up authentication APIs and structuring database rules to ensure data security while maintaining intended functionality.</li><li>Designing an efficient data model for storing entries, comments, and likes in a scalable way.</li><li>Providing users with flexibility in creating entries (such as optional images and tags) while preventing inappropriate content using a custom profanity filter.</li><li>Implementing a masonry-style layout for posts with smooth animations—this was tricky to perfect but fun to design.</li><li>Making the signup process user-friendly by splitting it into two phases, preserving user inputs between sections, and offering clear error messages for issues like duplicate codes, usernames, and emails. Users also receive a default profile picture, which they can customize later.</li></ul></div>",
+      "link": "https://pokemon-sleep-research-community.com",
+      "media": [
+        { "type": "image", "fileSrc": "/assets/images/psc2.png" },
+        { "type": "image", "fileSrc": "/assets/images/psc3.png" }
+      ]
+    },
+    {
+      "id": 2,
       "title": "Power Rock App",
       "subheading": "Fitness for Music Stars & Fans",
       "image": "/assets/images/power-rock.png",
@@ -14,7 +28,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Robux Calculator",
       "subheading": "Robux to Currency Conversion & Store Earnings",
       "image": "/assets/images/robux_calculator.png",
@@ -27,7 +41,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Bloxle",
       "subheading": "Unlimited Wordle",
       "image": "/assets/images/bloxle.png",
@@ -40,7 +54,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Flood Minigame",
       "subheading": "Fill the board with the same color in limited turns",
       "image": "/assets/images/flood.png",
@@ -53,7 +67,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Maze Game",
       "subheading": "Algorithmic Maze Creation and Solving",
       "image": "/assets/images/maze.png",
@@ -64,6 +78,6 @@
       "media": [
         { "type": "image", "fileSrc": "/assets/maze.png" }
       ]
-    }
+    } 
   ]
   

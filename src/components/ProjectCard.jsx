@@ -16,7 +16,7 @@ const ProjectCard = ({ project, isExpanded, onExpand, onCollapse }) => {
   };
 
   return (
-    <div 
+    <div
       className={`project-card ${isExpanded ? "expanded" : ""}`}
       onClick={handleCardClick} // Makes the entire card clickable
     >
@@ -73,37 +73,45 @@ const ProjectCard = ({ project, isExpanded, onExpand, onCollapse }) => {
                   {project.media.map((item, index) => (
                     <div key={index} className="expanded-media">
                       {item.type === "youtube" && (
-                        <iframe 
-                          src={`https://www.youtube.com/embed/${item.id}`} 
+                        <iframe
+                          src={`https://www.youtube.com/embed/${item.id}`}
                           title="YouTube video"
                           allowFullScreen
                         ></iframe>
                       )}
                       {item.type === "slides" && (
-                        <iframe 
-                          src={`https://docs.google.com/presentation/d/${item.id}/embed`} 
+                        <iframe
+                          src={`https://docs.google.com/presentation/d/${item.id}/embed`}
                           title="Google Slides"
                         ></iframe>
                       )}
                       {item.type === "pdf" && (
-                        <iframe 
-                          src={item.url} 
+                        <iframe
+                          src={item.url}
                           title="PDF Document"
                         ></iframe>
                       )}
                       {item.type === "roblox" && (
                         <a href={`https://www.roblox.com/games/${item.id}`} target="_blank" rel="noopener noreferrer" className="roblox-preview">
-                          <img src={`https://thumbnails.roblox.com/v1/places/${item.id}/icons?size=512x512&format=png`} 
-                              alt="Roblox Game Preview"
-                              className="roblox-thumbnail"/>
+                          <img src={`https://thumbnails.roblox.com/v1/places/${item.id}/icons?size=512x512&format=png`}
+                            alt="Roblox Game Preview"
+                            className="roblox-thumbnail" />
                         </a>
                       )}
                       {item.type === "image" && (
-                        <img 
-                          src={item.fileSrc} 
-                          alt={project.title}  // ✅ Descriptive alt text
+                        <img
+                          src={item.fileSrc}
+                          alt={project.title}
                           className="project-file-image"
                         />
+                      )}
+                      {item.type === "embed" && (
+                        <iframe
+                          src={item.url}
+                          title="Embedded Site"
+                          className="embedded-site"
+                          allowFullScreen
+                        ></iframe>
                       )}
                     </div>
 
