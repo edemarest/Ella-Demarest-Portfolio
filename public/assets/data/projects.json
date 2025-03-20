@@ -17,7 +17,7 @@
       "id": 2,
       "title": "RNA Analysis Tool",
       "subheading": "Upload, Analyze & Visualize RNA Sequences",
-      "image": "/assets/images/rna-tool-1.png",
+      "image": "/assets/images/rna-tool-2.png",
       "bullets": ["Flask API & React Frontend", "Python for analysis", "Currently a WIP!"],
       "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A web-based RNA sequence analysis tool that allows users to upload multiple RNA sequences in FASTA format and perform various bioinformatics functions. The platform supports both single and multi-sequence analysis, providing structured results in tables and graphs.</p><ul><li>Users can upload and manage multiple RNA sequences in different formats.</li><li>Supports functions such as motif search, RNA folding stability, and splice site prediction.</li><li>Results are displayed in clear tables and visualized with interactive graphs.</li><li>Built using Flask for API functionality and React with Tailwind CSS for the UI.</li></ul></div>",
       "description2": "<div class=\"project-description\"><p><strong>Challenges & Development</strong></p><ul><li>Currently implementing core bioinformatics functions using SciPy and BioPython, learning through real-world applications.</li><li>Building out API routes to ensure smooth data processing while handling different sequence types.</li><li>Developing efficient algorithms for RNA structural analysis and motif detection.</li><li>Ensuring a scalable design that allows users to easily upload, manage, and analyze sequences.</li></ul></div>",
