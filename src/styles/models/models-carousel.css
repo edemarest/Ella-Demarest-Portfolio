@@ -24,56 +24,97 @@
     @apply mx-auto w-full max-w-5xl;
     display: flex;
     justify-content: center;
-    align-items: center; /* ✅ Centers the models vertically */
-    height: 400px; /* ✅ Increased height */
+    align-items: center;
+    /* ✅ Centers the models vertically */
+    height: 400px;
+    /* ✅ Increased height */
     width: 100%;
-    background-color:rgba(52, 52, 52, 0.4);
+    background-color: rgba(52, 52, 52, 0.4);
     border-radius: 10px;
 }
 
 /* === Slick List (Ensures Proper Vertical Alignment) === */
 .slick-list {
     display: flex;
-    align-items: center; /* ✅ Centers items vertically */
+    align-items: center;
+    /* ✅ Centers items vertically */
     justify-content: center;
     height: 100%;
-    padding: 20px 0; /* ✅ Adds padding for better spacing */
+    padding: 20px 0;
+    /* ✅ Adds padding for better spacing */
 }
 
 /* === Slick Track (Ensures Models Fit Properly) === */
 .slick-track {
     display: flex;
-    align-items: center; /* ✅ Centers items in the track */
+    align-items: center;
+    /* ✅ Centers items in the track */
     justify-content: center;
-    gap: 30px; /* ✅ Adds spacing between slides */
+    gap: 30px;
+    /* ✅ Adds spacing between slides */
 }
+
+.single-slide .slick-track {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.single-slide .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    float: none !important;
+}
+
+.single-model-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: rgba(52, 52, 52, 0.4);
+    border-radius: 10px;
+    max-width: 100%;
+    margin: auto;
+  }  
 
 .model-frame {
     @apply border-2 border-cyberBlue;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px; /* ✅ Fixed size */
-    height: 350px; /* ✅ Increased height */
+    width: 250px;
+    /* ✅ Fixed size */
+    height: 350px;
+    /* ✅ Increased height */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 0px 15px 2px rgba(0, 255, 255, 0.4);
-    background-size: cover; /* ✅ Ensures the grid image covers the whole frame */
-    background-position: center; /* ✅ Keeps the grid centered */
-    background-repeat: no-repeat; /* ✅ Prevents tiling */
-    background-blend-mode: multiply; /* ✅ Increases grid contrast */
-    opacity: 1; /* ✅ Keeps full visibility of both layers */
+    background-size: cover;
+    /* ✅ Ensures the grid image covers the whole frame */
+    background-position: center;
+    /* ✅ Keeps the grid centered */
+    background-repeat: no-repeat;
+    /* ✅ Prevents tiling */
+    background-blend-mode: multiply;
+    /* ✅ Increases grid contrast */
+    opacity: 1;
+    /* ✅ Keeps full visibility of both layers */
 }
 
 /* === Slick Arrows (Centered Vertically) === */
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
     color: #0099ff !important;
     z-index: 10;
-    top: 50%; /* ✅ Centers arrows vertically */
+    top: 50%;
+    /* ✅ Centers arrows vertically */
     transform: translateY(-50%);
 }
 
-.slick-prev:hover, .slick-next:hover {
+.slick-prev:hover,
+.slick-next:hover {
     color: #0099ff !important;
 }
 
@@ -81,7 +122,7 @@
     transform: scale(1.01);
 }
 
-  .models-body-text {
+.models-body-text {
     @apply text-base py-5 text-left pl-10;
     font-family: "Rajdhani", sans-serif;
-  }
+}

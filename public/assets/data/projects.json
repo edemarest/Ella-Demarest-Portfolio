@@ -1,97 +1,175 @@
 [
-    {
-      "id": 1,
-      "title": "Pokémon Sleep Research Community",
-      "subheading": "Site for Pokémon Sleep Players",
-      "image": "/assets/images/psc.png",
-      "bullets": ["React & Firebase", "Secure Friend Code Sharing", "Blog-Style Posting"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A community forum and code-sharing platform built with React and Firebase. It allows <a href='https://pokemon-sleep-research-community.com' target='_blank'>Pokémon Sleep</a> players to easily find, copy, and share friend codes while keeping their codes hidden from spammers and trolls—unlike Reddit and other open-sharing sites.</p><ul><li>Users can choose to make their codes visible only to registered members, providing extra privacy.</li><li>The platform also enables users to create entries where they can ask questions, showcase game achievements, and more.</li><li>Posts can include attached images and tags, making it easier to organize and find relevant discussions.</li><li>Users can like, comment, and filter posts by specific tags to refine their browsing experience.</li></ul></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Setting up authentication APIs and structuring database rules to ensure data security while maintaining intended functionality.</li><li>Designing an efficient data model for storing entries, comments, and likes in a scalable way.</li><li>Providing users with flexibility in creating entries (such as optional images and tags) while preventing inappropriate content using a custom profanity filter.</li><li>Implementing a masonry-style layout for posts with smooth animations—this was tricky to perfect but fun to design.</li><li>Making the signup process user-friendly by splitting it into two phases, preserving user inputs between sections, and offering clear error messages for issues like duplicate codes, usernames, and emails. Users also receive a default profile picture, which they can customize later.</li></ul></div>",
-      "link": "https://pokemon-sleep-research-community.com",
-      "media": [
-        { "type": "image", "fileSrc": "/assets/images/psc2.png" },
-        { "type": "image", "fileSrc": "/assets/images/psc3.png" }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "RNA Analysis Tool",
-      "subheading": "Upload, Analyze & Visualize RNA Sequences",
-      "image": "/assets/images/rna-tool-2.png",
-      "bullets": ["Flask API & React Frontend", "Python for analysis", "Currently a WIP!"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A web-based RNA sequence analysis tool that allows users to upload multiple RNA sequences in FASTA format and perform various bioinformatics functions. The platform supports both single and multi-sequence analysis, providing structured results in tables and graphs.</p><ul><li>Users can upload and manage multiple RNA sequences in different formats.</li><li>Supports functions such as motif search, RNA folding stability, and splice site prediction.</li><li>Results are displayed in clear tables and visualized with interactive graphs.</li><li>Built using Flask for API functionality and React with Tailwind CSS for the UI.</li></ul></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges & Development</strong></p><ul><li>Currently implementing core bioinformatics functions using SciPy and BioPython, learning through real-world applications.</li><li>Building out API routes to ensure smooth data processing while handling different sequence types.</li><li>Developing efficient algorithms for RNA structural analysis and motif detection.</li><li>Ensuring a scalable design that allows users to easily upload, manage, and analyze sequences.</li></ul></div>",
-      "link": "https://github.com/edemarest/rna-analysis-tool",
-      "media": [
-        { "type": "image", "fileSrc": "/assets/images/rna-tool-1.png" },
-        { "type": "image", "fileSrc": "/assets/images/rna-tool-2.png" }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Power Rock App",
-      "subheading": "Fitness for Music Stars & Fans",
-      "image": "/assets/images/power-rock.png",
-      "bullets": ["Music & Fitness", "Band-Endorsed Workouts", "Reward System"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>The Power Rock app is designed to bring together music stars and their fans through fitness.</p><ol><li>Fans can take charge of their fitness journey by browsing workouts curated by the bands they love and completing them to earn rewards.</li><li>Bands and artists can connect with their fans by creating band-endorsed workouts customized to reflect their unique style.</li></ol><p><strong>App Functionality for Fans</strong></p><ul><li>Select up to 3 favorite genres and receive customized workout suggestions based on their tastes.</li><li>Browse a library of workouts and filter by interests.</li><li>Add or remove workouts from their personal library.</li><li>Complete structured workouts in-app with a guided interface.</li><li>Earn Power Points for completing workouts of varying difficulty levels.</li></ul><p><strong>App Functionality for Stars</strong></p><ul><li>Create a profile for their band (or themselves as solo artists) with a logo, up to 3 genres, and up to 3 band member names (each capped at 10 characters).</li><li>Design custom workouts sponsored by their band, including sets, exercises, rep counts, and difficulty levels.</li><li>Delete workouts when no longer needed.</li></ul></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Managing two distinct user types (Fans and Stars) required implementing robust authentication and data parsing to ensure seamless yet distinct app experiences for each user.</li><li>Developing the \"Do Workout\" screen logic was a significant challenge, particularly handling completed sets without breaking the layout.</li><li>Abstracting and organizing code into reusable helper functions and structs was critical for maintaining scalability as the app's complexity grew.</li></ul></div>",
-      "link": "https://github.com/edemarest/Power-Rock-App",
-      "media": [
-        { "type": "youtube", "id": "U-qfejJFTfM" },
-        { "type": "slides", "id": "194_5LoCfFsi7GLSna5Aaqp1MH_6LsLken8RVnQssJOw" }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Robux Calculator",
-      "subheading": "Robux to Currency Conversion & Earnings",
-      "image": "/assets/images/robux_calculator.png",
-      "bullets": ["DevEx Calculator", "Marketplace Fee Adjustments", "Currency Conversion"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>Developers, contractors, and Robux purchasers can use this tool to calculate costs and earnings.</p><ul><li>Calculates DevEx earnings from Robux to currency (local tax rate can be applied).</li><li>Converts currency value to Robux and vice versa and applies the package discounts Roblox offers for larger bundles.</li><li>Calculates Robux earnings with marketplace fee applied.</li><li>Determines price needed to earn a specified Robux amount given the marketplace.</li></ul></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>To ensure users could select their local currency, everything is calculated in USD and then multiplied by the conversion rate at the end of the calculation.</li><li>Because Roblox offers more Robux for higher-priced bundles, calculating the amount of Robux one could buy with a certain amount of money was not a linear equation.</li><li>A play tester recommended that I add a way to subtract taxes from DevEx earnings.</li></ul></div>",
-      "link": "https://www.roblox.com/games/13685362163/Robux-Computer",
-      "media": [
-        { "type": "youtube", "id": "BUmp30WhXAQ" }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Bloxle",
-      "subheading": "Unlimited Wordle",
-      "image": "/assets/images/bloxle.png",
-      "bullets": ["Custom UI", "Word Validation API", "Point System"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A recreation of the popular game 'Wordle.' The best part is that my version is unlimited—not just one-word-per-day! I also designed my user interface to give it a wooden vibe.</p></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>My first time creating and programming UI elements in Lua/Roblox Studio, which required trial and error.</li><li>Designing the game’s input system to behave like Wordle’s strict row-based guessing mechanism.</li><li>Implementing an API-based dictionary lookup to validate word guesses.</li></ul></div>",
-      "link": "https://www.youtube.com/watch?v=_1k-i0bezEs",
-      "media": [
-        { "type": "youtube", "id": "_1k-i0bezEs?si=IE99k5FS36lRjFY3" }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Flood Minigame",
-      "subheading": "Fill the board with the same color in limited turns",
-      "image": "/assets/images/flood.png",
-      "bullets": ["Flood Algorithm", "Difficulty Scaling", "Leaderboard System"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A recreation of the game 'Flood' in Lua. The goal of the game is to fill the board with the same color in the given number of turns.</p></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Developing an efficient flood-fill algorithm that didn't cause infinite loops.</li><li>Balancing game difficulty with customizable board size and colors.</li><li>Implementing a real-time leaderboard system using datastores to track high scores.</li></ul></div>",
-      "link": "https://www.roblox.com/games/12921382755/FLOOD-Beta",
-      "media": [
-        { "type": "youtube", "id": "your_youtube_id_here" }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Maze Game",
-      "subheading": "Algorithmic Maze Creation and Solving",
-      "image": "/assets/images/maze.png",
-      "bullets": ["Maze Generation", "Pathfinding Algorithms", "Gamified"],
-      "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>This program allows users to create and navigate a randomly generated maze.</p><ul><li>User can input dimensions to generate a maze of that size.</li><li>Arrow keys can be used to navigate the maze; the attempted path is highlighted.</li><li>There is an option to highlight the quickest solution.</li><li>User can toggle between a visual of how the 'breadth-first search' algorithm versus the 'depth-first search' algorithm would solve the maze.</li></ul></div>",
-      "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>The first difficult part was recreating Prim’s algorithm to generate a viable maze.</li><li>Incorporating visuals for the quickest solution and the two different search algorithms was a challenge.</li></ul></div>",
-      "link": "",
-      "media": [
-        { "type": "image", "fileSrc": "/assets/maze.png" }
-      ]
-    } 
-  ]
-  
+  {
+    "id": 1,
+    "title": "Pok\u00e9mon Sleep Research Community",
+    "subheading": "A privacy-focused community for Pok\u00e9mon Sleep players. Features include friend code sharing, discussion posts, and tag-based filtering. Built with React and Firebase for secure and scalable functionality.",
+    "image": "/assets/images/psc.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A community forum and friend code-sharing site for Pok\u00e9mon Sleep players. Built with React and Firebase, the platform offers privacy-aware code sharing, discussion posts, and a tag-based filtering system. Users can share entries, earn reputation, and connect with others while protecting their codes from spammers.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Developed secure authentication and Firestore rules for privacy-preserving features.</li><li>Created a flexible, scalable data structure for storing posts and user activity.</li><li>Implemented a dynamic masonry layout and profanity filter to maintain quality user contributions.</li></ul></div>",
+    "link": "https://pokemon-sleep-research-community.com",
+    "media": [
+      {
+        "type": "image",
+        "fileSrc": "/assets/images/psc2.png"
+      },
+      {
+        "type": "image",
+        "fileSrc": "/assets/images/psc3.png"
+      }
+    ],
+    "tags": [
+      "Firebase",
+      "React"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "HuskyFlow (Enhanced)",
+    "subheading": "A Stack Overflow clone with daily puzzles and messaging. Built with the MERN stack, it includes authentication, leaderboards, and puzzle challenges. Focused on modular architecture and secure backend design.",
+    "image": "/assets/images/swe_2.png",
+    "description1": "\n    <div class=\"project-description\"><p><strong>Description</strong></p>\n    <p>This class project reimagines a bare-bones Stack Overflow clone with major feature upgrades. Built with the MERN stack, HuskyFlow introduces user authentication, direct messaging, and daily puzzle challenges modeled after games like NYT\u2019s Sudoku and LinkedIn\u2019s logic puzzles. I contributed most to the system architecture for the puzzle schemas, leaderboard model, and backend API design.</p>\n    </div>\n    ",
+    "description2": "\n    <div class=\"project-description\"><p><strong>Challenges</strong></p>\n    <ul>\n    <li>Designed daily puzzle schema, including CodeNumbers and TruthTable logic puzzle formats.</li>\n    <li>Created secure submission logic, leaderboard tracking, and one-attempt-per-day constraints.</li>\n    <li>Collaborated in a team to modularize a complex full-stack codebase while integrating new features.</li>\n    </ul></div>\n    ",
+    "link": "https://fake-so-client-418.onrender.com",
+    "media": [
+      { "type": "image", "fileSrc": "/assets/images/swe_1.png" },
+      { "type": "image", "fileSrc": "/assets/images/swe_2.png" }
+    ],
+    "tags": [
+      "Express",
+      "MongoDB",
+      "Node.js",
+      "React"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "RNA Analysis Tool",
+    "subheading": "A bioinformatics platform for RNA sequence analysis. Users can upload FASTA files, perform motif searches, and visualize results. Built with Flask APIs and React for interactive data visualization.",
+    "image": "/assets/images/rna-tool-2.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>An RNA sequence analysis platform that allows users to upload FASTA files and perform various structural and predictive analyses. It supports motif search, RNA folding stability, and splice site prediction, and outputs results via interactive graphs and data tables. The backend uses Flask APIs with Python libraries like SciPy and BioPython, while the frontend is built with React and Tailwind.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Designed robust backend routes to handle multiple sequence types.</li><li>Integrated real-world bioinformatics libraries with performant state handling in React.</li><li>Planned scalability to support long sequences and batch submissions.</li></ul></div>",
+    "link": "https://github.com/edemarest/rna-analysis-tool",
+    "media": [
+      {
+        "type": "image",
+        "fileSrc": "/assets/images/rna-tool-1.png"
+      },
+      {
+        "type": "image",
+        "fileSrc": "/assets/images/rna-tool-2.png"
+      }
+    ],
+    "tags": [
+      "Flask",
+      "Python",
+      "React"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Power Rock App",
+    "subheading": "A music-themed fitness app for fans and artists. Users complete workouts and earn rewards, while artists create branded exercises. Features dual user roles and real-time state updates.",
+    "image": "/assets/images/power-rock.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A music-themed fitness app connecting fans with artist-created workouts. Users can select favorite genres, complete guided workouts, and earn rewards. Artists can create their own branded exercises, and the dual user role structure supports tailored onboarding flows and content control.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Designed scalable logic for managing two user types with separate privileges.</li><li>Handled real-time state updates during workout completion flows.</li><li>Maintained a consistent visual and UX style across both fan and artist journeys.</li></ul></div>",
+    "link": "https://github.com/edemarest/Power-Rock-App",
+    "media": [
+      {
+        "type": "youtube",
+        "id": "U-qfejJFTfM"
+      },
+      {
+        "type": "slides",
+        "id": "194_5LoCfFsi7GLSna5Aaqp1MH_6LsLken8RVnQssJOw"
+      }
+    ],
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Kambaz",
+    "subheading": "A learning management system inspired by Canvas. Supports course creation, user roles, and a full quiz engine. Built with React, Node.js, and MongoDB for robust functionality.",
+    "image": "/assets/images/kambaz_preview.png",
+    "description1": "\n    <div class=\"project-description\"><p><strong>Description</strong></p>\n    <p>Kambaz is a full-featured learning management system built from scratch as a class project modeled after Canvas. The app supports course creation, user enrollment, module tracking, and full CRUD functionality across content. As a final extension, I built a comprehensive quiz/exam engine that supports multiple question types, submission tracking, and publishing options for faculty.</p>\n    </div>\n    ",
+    "description2": "\n    <div class=\"project-description\"><p><strong>Challenges</strong></p>\n    <ul>\n    <li>Integrated quizzes into existing data model with RESTful API endpoints.</li>\n    <li>Implemented permissions and views for both student and faculty workflows.</li>\n    <li>Utilized Redux for state management and ensured backend validation of user input and submission logic.</li>\n    </ul></div>\n    ",
+    "media": [
+      { "type": "image", "fileSrc": "/assets/images/kambaz_1.png" },
+      { "type": "image", "fileSrc": "/assets/images/kambaz_2.png" }
+    ],
+    "tags": [
+      "Express",
+      "JavaScript",
+      "MongoDB",
+      "Node.js",
+      "React"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Robux Calculator",
+    "subheading": "A tool for Roblox developers to calculate earnings and fees. Converts Robux to local currencies with tax and discount options. Designed for clarity and ease of use.",
+    "image": "/assets/images/robux_calculator.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>This tool helps developers calculate Robux earnings, DevEx values, and marketplace fees. It converts between Robux and local currencies, applying taxes and discounts. Useful for game creators managing monetization on Roblox.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Implemented non-linear pricing logic with dynamic tax inputs.</li><li>Designed currency scaling and display formatting for clarity.</li><li>Integrated play tester feedback to add optional tax removal tools.</li></ul></div>",
+    "link": "https://www.roblox.com/games/13685362163/Robux-Computer",
+    "media": [
+      {
+        "type": "youtube",
+        "id": "BUmp30WhXAQ"
+      }
+    ],
+    "tags": [
+      "React"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Bloxle",
+    "subheading": "An endless Wordle-style game built in Roblox Studio. Features real-time word validation and custom UI. Designed for continuous play without daily limits.",
+    "image": "/assets/images/bloxle.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A never-ending Wordle-style game made in Roblox Studio. Bloxle features a custom wooden UI, row-based guessing logic, and an API for real-time word validation. Designed for endless play without the 1-word-a-day limit.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Built dynamic UI elements and validated API guesses in real-time.</li><li>Matched Wordle\u2019s interaction flow using row constraints and error messages.</li><li>Styled UI with a custom wood-grain look for unique branding.</li></ul></div>",
+    "link": "https://www.youtube.com/watch?v=_1k-i0bezEs",
+    "media": [
+      {
+        "type": "youtube",
+        "id": "_1k-i0bezEs?si=IE99k5FS36lRjFY3"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": 8,
+    "title": "Flood Minigame",
+    "subheading": "A Lua-based puzzle game to fill the board with one color. Features dynamic difficulty scaling and real-time leaderboards. Built with efficient flood-fill logic.",
+    "image": "/assets/images/flood.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>Flood is a Lua-based puzzle game where players aim to match the entire board to one color in limited turns. The board grows in complexity and has customizable difficulty. Built with a color fill algorithm and real-time leaderboards.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Created efficient flood-fill logic and prevented infinite loops.</li><li>Balanced board generation with dynamic difficulty scaling.</li><li>Built backend leaderboard functionality using Roblox datastores.</li></ul></div>",
+    "link": "https://www.roblox.com/games/12921382755/FLOOD-Beta",
+    "media": [
+      {
+        "type": "youtube",
+        "id": "your_youtube_id_here"
+      }
+    ],
+    "tags": []
+  },
+  {
+    "id": 9,
+    "title": "Maze Game",
+    "subheading": "A maze-generation and solving game using Prim's algorithm. Includes BFS/DFS visualization and interactive controls. Designed for educational purposes to explore algorithm tradeoffs.",
+    "image": "/assets/images/maze.png",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A pathfinding and maze-generation game using Prim\u2019s algorithm and interactive controls. Users can navigate mazes using keyboard input and view optimal solutions through BFS and DFS toggles. Designed as a tool to visualize algorithm tradeoffs.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Implemented Prim\u2019s algorithm for viable maze generation.</li><li>Integrated animation states for search algorithms in real-time.</li><li>Balanced visual clarity with technical depth for educational value.</li></ul></div>",
+    "link": "",
+    "media": [
+      {
+        "type": "image",
+        "fileSrc": "/assets/maze.png"
+      }
+    ],
+    "tags": ["Java"]
+  }
+]

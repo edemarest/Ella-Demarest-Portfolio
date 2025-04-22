@@ -26,19 +26,25 @@ const ProjectCard = ({ project, isExpanded, onExpand, onCollapse }) => {
             {/* Preview State */}
             <img src={project.image} alt={project.title} className="project-image" />
             <h3 className="project-title">{project.title}</h3>
-            <p className="project-subheading">{project.subheading}</p>
-            <ul className="project-list">
-              {project.bullets.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
 
-            {/* Expand Button (For Layout Only) */}
-            <button className="expand-btn" onClick={(e) => {
-              e.stopPropagation(); // Prevents triggering card click event
-              console.log("Expanding Project via Button:", project.id);
-              onExpand();
-            }}>
+            {/* ✅ Tags under title */}
+            <div className="project-tag-container">
+              {project.tags?.map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
+            </div>
+
+            {/* ✅ Subheading turned into paragraph */}
+            <p className="project-preview-description">{project.subheading}</p>
+
+            <button
+              className="expand-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                console.log("Expanding Project via Button:", project.id);
+                onExpand();
+              }}
+            >
               Expand
             </button>
           </>

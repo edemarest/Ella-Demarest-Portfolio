@@ -4,7 +4,7 @@ import { FaCubes, FaPaintBrush, FaSprayCan } from "react-icons/fa";
 import SectionHeader from "../components/SectionHeader";
 import { SiBlender, SiAdobe } from "react-icons/si";
 import ModelViewer from "./ModelViewer";
-import MobileModelViewer from "./MobileModelViewer"; // ✅ Mobile-friendly component
+import MobileModelViewer from "./MobileModelViewer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/models/models-carousel.css";
@@ -13,6 +13,14 @@ import "../styles/tailwind.css";
 const Models = () => {
   const [models, setModels] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedTag, setSelectedTag] = useState(null);
+  const filteredModels = selectedTag
+    ? models.filter((model) =>
+      model.tags?.some(
+        (tag) => tag.toLowerCase() === selectedTag.toLowerCase()
+      )
+    )
+    : models;
 
   useEffect(() => {
     fetch("/assets/data/models.json") // ✅ Fetch models.json
@@ -33,22 +41,19 @@ const Models = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // or 4 if your layout fits
     slidesToScroll: 1,
-    autoplay: true,
     arrows: true,
-    centerMode: false,
-    variableWidth: false,
-    draggable: false,
+    autoplay: false,
     swipe: true,
     touchMove: true,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, centerPadding: "20px" } },
-      { breakpoint: 768, settings: { slidesToShow: 1, centerPadding: "0px" } },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
-  };
+  };  
 
   const miniButtons = [
     { id: 1, label: "Blender", icon: <SiBlender /> },
@@ -67,18 +72,31 @@ const Models = () => {
         miniButtons={miniButtons}
         buttonColor="blueLabel"
         description="I am advanced at modeling and texturing 3D assets and do commissions for them as well as sell wearable assets on the Roblox Marketplace. I have extensive experience creating both stylized and realistic clothing, character accessories, environment assets, vehicles, and more."
+        selectedTag={selectedTag}
+        setSelectedTag={setSelectedTag}
       />
-      
+
       {/* Conditional Rendering */}
-      {isMobile ? <MobileModelViewer models={models} /> : (
+      {isMobile ? <MobileModelViewer models={filteredModels} /> : (
         <div className="carousel-wrapper">
-          <Slider {...settings} className="models-carousel">
-            {models.map((model, index) => (
-              <div key={index} className="model-frame">
-                <ModelViewer modelPath={model.url} cameraConfig={model.camera} />
+          {filteredModels.length === 1 ? (
+            <div className="single-model-wrapper">
+              <div className="model-frame">
+                <ModelViewer
+                  modelPath={filteredModels[0].url}
+                  cameraConfig={filteredModels[0].camera}
+                />
               </div>
-            ))}
-          </Slider>
+            </div>
+          ) : (
+            <Slider {...settings} className="models-carousel">
+              {filteredModels.map((model, index) => (
+                <div key={index} className="model-frame">
+                  <ModelViewer modelPath={model.url} cameraConfig={model.camera} />
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       )}
     </div>

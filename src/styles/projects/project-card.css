@@ -212,4 +212,21 @@
     .project-content {
         @apply flex flex-col justify-between h-full w-full;
     }
+
+    .project-tag-container {
+        @apply flex flex-wrap gap-2 mt-2 mb-3 w-full;
+      }
+      
+      .project-tag {
+        @apply bg-white/10 text-white text-xs font-medium px-2 py-1 rounded-full;
+        font-family: "Orbitron", sans-serif;
+        white-space: nowrap;
+      }
+      
+      .project-preview-description {
+        @apply text-cyberTextGrey text-base leading-snug w-full;
+        font-family: "Rajdhani", sans-serif;
+        padding-top: 6px;
+      }
+      
 }

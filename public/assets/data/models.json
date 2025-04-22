@@ -1,38 +1,44 @@
 [
-    {
-      "url": "/assets/models/Audi.glb",
-      "camera": { "position": [60, 13,80], "fov": 11 },
-      "thumbnail" : "/assets/images/thumbnails/audi.png"
-    },
-    {
-        "url": "/assets/models/mario.glb",
-        "camera": { "position": [90, 10, 90], "fov": 11 },
-        "thumbnail" : "/assets/images/thumbnails/mario.png"
-      },
-      {
-        "url": "/assets/models/Portal.glb",
-        "camera": { "position": [100, 100, 260], "fov": 7 },
-        "thumbnail" : "/assets/images/thumbnails/portal.png"
-      },
-      {
-        "url": "/assets/models/car.glb",
-        "camera": { "position": [90, 30, 120], "fov": 10 },
-        "thumbnail" : "/assets/images/thumbnails/car.png"
-      },
-      {
-        "url": "/assets/models/TreasureChest.glb",
-        "camera": { "position": [45, 20, 75], "fov": 5 },
-        "thumbnail" : "/assets/images/thumbnails/chest.png"
-      },
-      {
-        "url": "/assets/models/BoneWings.glb",
-        "camera": { "position": [0, 0, 40], "fov": 11 },
-        "thumbnail" : "/assets/images/thumbnails/boneWings.png"
-      },
-      {
-        "url": "/assets/models/Wings.glb",
-        "camera": { "position": [150, 30, 75], "fov": 4 },
-        "thumbnail" : "/assets/images/thumbnails/wings.png"
-      }
-  ]
-  
+  {
+    "url": "/assets/models/Audi.glb",
+    "camera": { "position": [60, 13, 80], "fov": 11 },
+    "thumbnail": "/assets/images/thumbnails/audi.png",
+    "tags": ["Blender", "Substance Painter"]
+  },
+  {
+    "url": "/assets/models/mario.glb",
+    "camera": { "position": [90, 10, 90], "fov": 11 },
+    "thumbnail": "/assets/images/thumbnails/mario.png",
+    "tags": ["Blender", "Substance Painter"]
+  },
+  {
+    "url": "/assets/models/Portal.glb",
+    "camera": { "position": [100, 100, 260], "fov": 7 },
+    "thumbnail": "/assets/images/thumbnails/portal.png",
+    "tags": ["Blender", "Substance Painter"]
+  },
+  {
+    "url": "/assets/models/car.glb",
+    "camera": { "position": [90, 30, 120], "fov": 10 },
+    "thumbnail": "/assets/images/thumbnails/car.png",
+    "tags": ["Blender", "Substance Painter"]
+  },
+  {
+    "url": "/assets/models/TreasureChest.glb",
+    "camera": { "position": [45, 20, 75], "fov": 5 },
+    "thumbnail": "/assets/images/thumbnails/chest.png",
+    "tags": ["Blender", "ZBrush", "Procreate"]
+  },
+  {
+    "url": "/assets/models/BoneWings.glb",
+    "camera": { "position": [0, 0, 40], "fov": 11 },
+    "thumbnail": "/assets/images/thumbnails/boneWings.png",
+    "tags": ["Blender", "Procreate"]
+  },
+  {
+    "url": "/assets/models/Wings.glb",
+    "camera": { "position": [150, 30, 75], "fov": 4 },
+    "thumbnail": "/assets/images/thumbnails/wings.png",
+    "tags": ["Blender", "Procreate"]
+  }
+]

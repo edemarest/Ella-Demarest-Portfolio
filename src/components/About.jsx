@@ -22,7 +22,7 @@ const About = () => {
 
   // ✅ Fun Fact Data
   const funFacts = [
-    { img: "/assets/images/funfacts/death-note.png", text: "My favorite animes are Attack on Titan and Death Note."},
+    { img: "/assets/images/funfacts/death-note.png", text: "My favorite animes are Attack on Titan and Death Note." },
     { img: "/assets/images/funfacts/pfizer.png", text: "I was in a clinical trial for the Pfizer COVID-19 vaccine." },
     { img: "/assets/images/funfacts/frog.png", text: "I have over a dozen tree frogs and dart frogs back home." },
     { img: "/assets/images/funfacts/rdc.webp", text: "I attended the Roblox Developer Conference in 2020 (virtual)." },
@@ -30,7 +30,7 @@ const About = () => {
     { img: "/assets/images/funfacts/volleyball.png", text: "I used to play competitive indoor & beach volleyball but only play for fun now." },
     { img: "/assets/images/funfacts/silicon-valley.png", text: "My favorite TV show is Silicon Valley." },
     { img: "/assets/images/funfacts/croagunk.png", text: "My favorite pokemon is Croagunk." },
-    { img: "/assets/images/funfacts/skyrim.png", text: "I have hundreds of hours on Skyrim and am (im)patiently waiting for Elder Scrolls VI." }  ];
+    { img: "/assets/images/funfacts/skyrim.png", text: "I have hundreds of hours on Skyrim and am (im)patiently waiting for Elder Scrolls VI." }];
 
   // ✅ State for Fun Fact Display
   const [currentFunFact, setCurrentFunFact] = useState(funFacts[0]);
@@ -54,7 +54,7 @@ const About = () => {
 
     updateHeights();
     window.addEventListener("resize", updateHeights);
-    
+
     return () => window.removeEventListener("resize", updateHeights);
   }, []);
 

@@ -1,43 +1,52 @@
 [
-    {
-      "url": "/assets/images/titan.png",
-      "title": "Attack Titan from Attack on Titan"
-    },
-    {
-      "url": "/assets/images/caroline.png",
-      "title": "Princess Caroline from Bojack Horseman"
-    },
-    {
-      "url": "/assets/images/money.png",
-      "title": "Commission for currency tier icons"
-    },
-    {
-      "url": "/assets/images/gibdo.png",
-      "title": "Gibdo from Tears of the Kingdom"
-    },
-    {
-      "url": "/assets/images/eva.png",
-      "title": "Eva 12 from Neon Genesis: Evangelion"
-    },
-    {
-      "url": "/assets/images/statue.jpeg",
-      "title": "Drawing for school project"
-    },
-    {
-      "url": "/assets/images/dabi.png",
-      "title": "Dabi from My Hero Academia"
-    },
-    {
-      "url": "/assets/images/hawks.png",
-      "title": "Hawks from My Hero Academia"
-    },
-    {
-      "url": "/assets/images/suits.png",
-      "title": "Superhero outfit commission"
-    },
-    {
-      "url": "/assets/images/nomu.png",
-      "title": "Nomu from My Hero Academia"
-    }
-  ]
-  
+  {
+    "url": "/assets/images/titan.png",
+    "title": "Attack Titan from Attack on Titan",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/caroline.png",
+    "title": "Princess Caroline from Bojack Horseman",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/money.png",
+    "title": "Commission for currency tier icons",
+    "tags": ["Vector Art", "UI Design"]
+  },
+  {
+    "url": "/assets/images/gibdo.png",
+    "title": "Gibdo from Tears of the Kingdom",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/eva.png",
+    "title": "Eva 12 from Neon Genesis: Evangelion",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/statue.jpeg",
+    "title": "Drawing for school project",
+    "tags": []
+  },
+  {
+    "url": "/assets/images/dabi.png",
+    "title": "Dabi from My Hero Academia",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/hawks.png",
+    "title": "Hawks from My Hero Academia",
+    "tags": ["Digital Art"]
+  },
+  {
+    "url": "/assets/images/suits.png",
+    "title": "Superhero outfit commission",
+    "tags": ["Vector Art"]
+  },
+  {
+    "url": "/assets/images/nomu.png",
+    "title": "Nomu from My Hero Academia",
+    "tags": ["Digital Art"]
+  }
+]

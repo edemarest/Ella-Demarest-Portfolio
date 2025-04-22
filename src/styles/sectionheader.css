@@ -58,4 +58,39 @@
     @apply text-lg py-5 text-left;
     font-family: "Rajdhani", sans-serif;
   }
+
+  /* === Active Tag Variants === */
+  .greenLabel.active-tag {
+    background-color: rgba(54, 224, 210, 0.5);
+    box-shadow: 0 0 6px 2px rgba(54, 224, 210, 0.5);
+  }
+
+  .blueLabel.active-tag {
+    background-color: rgba(54, 173, 224, 0.9);
+    box-shadow: 0 0 6px 2px rgba(54, 173, 224, 0.5);
+  }
+
+  .purpleLabel.active-tag {
+    background-color: rgba(60, 54, 224, 0.9);
+    box-shadow: 0 0 6px 2px rgba(60, 54, 224, 0.5);
+    color: white;
+  }
+
+  .pinkLabel.active-tag {
+    background-color: rgba(171, 0, 244, 0.9);
+    box-shadow: 0 0 6px 2px rgba(171, 0, 244, 0.5);
+    color: white;
+  }
 }
+
+/* Remove global active-tag hover */
+.mini-glowing-label:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+.non-clickable-tag {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
