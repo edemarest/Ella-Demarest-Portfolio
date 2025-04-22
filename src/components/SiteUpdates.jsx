@@ -19,7 +19,7 @@ const SiteUpdates = () => {
     if (!isVisible || !updateData) return null; // ✅ Prevent rendering when dismissed or data missing
 
     return (
-        <div className="site-updates-container" onClick={() => navigate("/games")}> {/* ✅ Use navigate() */}
+        <div className="site-updates-container">
             {/* 🔔 Header Section */}
             <div className="site-updates-header">
                 <FaBell className="site-updates-icon" />
