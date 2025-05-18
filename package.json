@@ -31,8 +31,9 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "server": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",  
     "client": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
