@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaBell } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // ✅ Import React Router navigation
 import "../styles/site-updates.css"; // ✅ Import the CSS file
 
 const SiteUpdates = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [updateData, setUpdateData] = useState(null);
-    const navigate = useNavigate(); // ✅ Use React Router for navigation
 
     // ✅ Load JSON data
     useEffect(() => {
