@@ -24,6 +24,28 @@
   },
   {
     "id": 2,
+    "title": "Phas Evidence Tracker",
+    "subheading": "A collaborative evidence tracking tool for Phasmophobia players. Features real-time session sharing, Discord integration, and ghost identification assistance.",
+    "image": "/assets/images/phas-journal-cover.gif",
+    "description1": "<div class=\"project-description\"><p><strong>Description</strong></p><p>A real-time collaborative evidence tracker for Phasmophobia ghost hunting sessions. Players can use either the <a href=\"https://phas-evidence-tracker.onrender.com\" target=\"_blank\" style=\"color:#3b82f6;text-decoration:underline;\">browser version</a> (create or join an investigation lobby manually) or the <a href=\"https://discord.com/oauth2/authorize?client_id=1393993800988491776\" target=\"_blank\" style=\"color:#3b82f6;text-decoration:underline;\">Discord Activity version</a> (auto-session creation inside Discord). Both versions allow teams to track discovered evidence, eliminate ghost types, and coordinate findings in real time. <a href=\"https://github.com/edemarest/phas-evidence-tracker\" target=\"_blank\" style=\"color:#3b82f6;text-decoration:underline;\">Source code on GitHub</a>.</p></div>",
+    "description2": "<div class=\"project-description\"><p><strong>Challenges</strong></p><ul><li>Built real-time synchronization using WebSocket connections to ensure all players see evidence updates instantly.</li><li>Implemented Discord Embedded App SDK integration for seamless auto-session creation within Discord activities.</li><li>Designed dual-mode architecture supporting both Discord-integrated sessions and browser-based sessions with manual join codes.</li><li>Created robust session management with participant tracking, evidence state synchronization, and ghost elimination logic.</li></ul></div>",
+    "link": "https://phas-evidence-tracker.onrender.com",
+    "media": [
+      {
+        "type": "youtube",
+        "id": "Ia5rDEf-x7s"
+      }
+    ],
+    "tags": [
+      "React",
+      "Node.js", 
+      "Express",
+      "WebSocket",
+      "Discord SDK"
+    ]
+},
+  {
+    "id": 3,
     "title": "HuskyFlow (Enhanced)",
     "subheading": "A Stack Overflow clone with daily puzzles and messaging. Built with the MERN stack, it includes authentication, leaderboards, and puzzle challenges. Focused on modular architecture and secure backend design.",
     "image": "/assets/images/swe_2.png",
@@ -42,7 +64,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "RNA Analysis Tool",
     "subheading": "A bioinformatics platform for RNA sequence analysis. Users can upload FASTA files, perform motif searches, and visualize results. Built with Flask APIs and React for interactive data visualization.",
     "image": "/assets/images/rna-tool-2.png",
@@ -66,7 +88,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Power Rock App",
     "subheading": "A music-themed fitness app for fans and artists. Users complete workouts and earn rewards, while artists create branded exercises. Features dual user roles and real-time state updates.",
     "image": "/assets/images/power-rock.png",
@@ -88,7 +110,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Kambaz",
     "subheading": "A learning management system inspired by Canvas. Supports course creation, user roles, and a full quiz engine. Built with React, Node.js, and MongoDB for robust functionality.",
     "image": "/assets/images/kambaz_preview.png",
@@ -107,7 +129,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Robux Calculator",
     "subheading": "A tool for Roblox developers to calculate earnings and fees. Converts Robux to local currencies with tax and discount options. Designed for clarity and ease of use.",
     "image": "/assets/images/robux_calculator.png",
@@ -125,7 +147,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Bloxle",
     "subheading": "An endless Wordle-style game built in Roblox Studio. Features real-time word validation and custom UI. Designed for continuous play without daily limits.",
     "image": "/assets/images/bloxle.png",
@@ -141,7 +163,7 @@
     "tags": []
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Flood Minigame",
     "subheading": "A Lua-based puzzle game to fill the board with one color. Features dynamic difficulty scaling and real-time leaderboards. Built with efficient flood-fill logic.",
     "image": "/assets/images/flood.png",
@@ -157,7 +179,7 @@
     "tags": []
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Maze Game",
     "subheading": "A maze-generation and solving game using Prim's algorithm. Includes BFS/DFS visualization and interactive controls. Designed for educational purposes to explore algorithm tradeoffs.",
     "image": "/assets/images/maze.png",
